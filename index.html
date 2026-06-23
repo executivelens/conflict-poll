@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conflict Direction — Course Deck</title>
+<style>
+:root{
+  --paper:#fff; --ink:#1d1d1f;
+  --bg-primary:#fff; --text-primary:#1d1d1f; --text-secondary:#6e6e73;
+  --accent:#0071e3; --accent-dim:rgba(0,113,227,.10);
+  --border:#d2d2d7; --surface:#f5f5f7; --on-accent:#fff;
+  --font-title:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --font-body:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;
+  --slide-padding:clamp(2rem,6vw,5rem);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{height:100%;scroll-snap-type:y mandatory;scroll-behavior:smooth;overflow-x:hidden}
+body{height:100%;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.slide{width:100vw;height:100vh;height:100dvh;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:flex-start;position:relative;padding:var(--slide-padding);padding-top:clamp(3.4rem,8vh,5.6rem)}
+.slide.cover,.slide.quote,.slide.closing,.slide.vcenter{justify-content:center;padding-top:var(--slide-padding)}
+
+h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);line-height:1.04}
+.eyebrow{display:inline-flex;align-items:center;font-size:clamp(.95rem,1.3vw,1.15rem);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.7rem}
+.lead{font-size:clamp(1.2rem,1.9vw,1.55rem);color:var(--text-secondary);margin-top:1.1rem;max-width:42ch;line-height:1.45}
+.accentword{color:var(--accent);font-style:italic}
+
+/* ---- animation toolkit ---- */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1),filter .6s ease;will-change:opacity,transform}
+.slide.visible .reveal{opacity:1;transform:none;filter:none}
+.reveal.from-left{transform:translateX(-24px)}
+.reveal.from-right{transform:translateX(24px)}
+.reveal.from-blur{filter:blur(8px);transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}
+  html{scroll-behavior:auto}
+  .live-dot{animation:none}
+}
+
+/* ---- live poll ---- */
+.live-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:#34c759;margin:0 .5em 0 0;vertical-align:middle;animation:livePulse 1.6s ease-in-out infinite}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}
+#poll-q{max-width:24ch;font-size:clamp(2rem,4vw,3.4rem)}
+
+.poll-layout{display:flex;gap:clamp(2rem,5vw,4.5rem);align-items:center;margin-top:clamp(1.3rem,2.8vh,2rem)}
+.vote-col{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:.85rem}
+.qr-card{background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(.8rem,1.4vw,1.1rem);box-shadow:0 18px 50px rgba(0,0,0,.12);line-height:0}
+.qr-card img{width:clamp(146px,15vw,196px);height:clamp(146px,15vw,196px);display:block;border-radius:6px}
+.qr-fallback{width:clamp(146px,15vw,196px);height:clamp(146px,15vw,196px);display:grid;place-items:center;text-align:center;color:var(--text-secondary);font-weight:600;font-size:1rem;background:var(--surface);border-radius:6px}
+.vote-note{font-weight:700;font-size:clamp(1.1rem,1.5vw,1.4rem);text-align:center}
+.vote-sub{font-size:clamp(.92rem,1.2vw,1.05rem);color:var(--text-secondary);text-align:center;max-width:26ch;line-height:1.4}
+
+.result-col{flex:1 1 auto;min-width:0}
+.poll{display:flex;flex-direction:column;gap:clamp(1.4rem,3.4vh,2.2rem);max-width:760px}
+.poll-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.45rem;gap:1rem}
+.poll-opt{font-weight:700;font-size:clamp(1.2rem,1.7vw,1.55rem)}
+.poll-pct{font-family:var(--font-title);font-weight:700;color:var(--accent);font-size:clamp(1.4rem,2vw,1.9rem);font-variant-numeric:tabular-nums;white-space:nowrap}
+.poll-pct .n{color:var(--text-secondary);font-size:.55em;font-weight:600;margin-left:.45em}
+.poll-track{height:clamp(24px,3.6vh,38px);background:var(--surface);border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.poll-fill{height:100%;width:0;background:var(--accent);border-radius:999px;transition:width .9s cubic-bezier(.16,1,.3,1)}
+.poll-row:nth-child(2) .poll-fill{background:color-mix(in srgb,var(--accent) 60%,#fff)}
+.poll-foot{margin-top:clamp(1.4rem,3vh,2.1rem);color:var(--text-secondary);font-weight:600;font-size:clamp(1.02rem,1.35vw,1.22rem)}
+.poll-foot b{color:var(--text-primary);font-variant-numeric:tabular-nums}
+.poll-wait{color:var(--text-secondary);font-weight:600;font-size:clamp(1.05rem,1.4vw,1.25rem);padding:.4rem 0}
+
+@media (max-width:900px){.poll-layout{flex-direction:column;align-items:flex-start}}
+@media (max-height:600px){.nav-dots{display:none}}
+</style>
+</head>
+<body>
+
+<!-- 1 · Live warm-up poll -->
+<section class="slide vcenter" id="live-poll">
+  <span class="eyebrow reveal"><span class="live-dot"></span>Live warm-up · A survey of conflict direction</span>
+  <h2 class="reveal" id="poll-q">Have you ever been given <span class="accentword">conflicting directions</span> — from your boss, your skip, or stakeholders — and felt stuck in between?</h2>
+  <div class="poll-layout">
+    <div class="vote-col reveal from-left">
+      <div class="qr-card">
+        <img id="qr-img" alt="Scan to open the voting form"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=0&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSfxYjH7k1iokEU3NhLbEeM0mF1yUa9A-NmZRxCPl0v70fXl4g%2Fviewform">
+      </div>
+      <div class="vote-note">Scan to vote</div>
+      <div class="vote-sub">or use the link I shared</div>
+    </div>
+    <div class="result-col reveal from-right">
+      <div class="poll" id="poll-bars"></div>
+      <div class="poll-foot"><b id="poll-total">0</b> responses · refreshes automatically</div>
+    </div>
+  </div>
+</section>
+
+<script>
+/* ---- navigation controller ---- */
+class SlidePresentation{
+  constructor(){this.slides=document.querySelectorAll('.slide');this.currentSlide=0;this.totalSlides=this.slides.length;this.setupObserver();this.setupKeyboard();this.setupProgress();this.setupDots();}
+  setupObserver(){const o=new IntersectionObserver(es=>{es.forEach(e=>{e.target.classList.toggle('visible',e.isIntersecting);if(e.isIntersecting){this.currentSlide=[...this.slides].indexOf(e.target);this.updateProgress();this.updateDots();}});},{threshold:.5});this.slides.forEach(s=>o.observe(s));}
+  setupKeyboard(){document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowDown'||e.key===' '){e.preventDefault();this.goTo(this.currentSlide+1);}else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();this.goTo(this.currentSlide-1);}});}
+  goTo(i){if(i>=0&&i<this.totalSlides)this.slides[i].scrollIntoView({behavior:'smooth'});}
+  setupProgress(){const b=document.createElement('div');b.className='progress-bar';b.style.cssText='position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:100;transition:width .3s ease;';document.body.prepend(b);this.progressBar=b;this.updateProgress();}
+  updateProgress(){this.progressBar.style.width=((this.currentSlide+1)/this.totalSlides)*100+'%';}
+  setupDots(){const n=document.createElement('nav');n.className='nav-dots';n.style.cssText='position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:.5rem;z-index:100;';this.slides.forEach((_,i)=>{const d=document.createElement('button');d.style.cssText='width:8px;height:8px;border-radius:50%;border:none;background:var(--text-secondary);opacity:.4;cursor:pointer;transition:all .3s;padding:0;';d.addEventListener('click',()=>this.goTo(i));n.appendChild(d);});document.body.appendChild(n);this.dots=n.querySelectorAll('button');this.updateDots();}
+  updateDots(){this.dots.forEach((d,i)=>{d.style.opacity=i===this.currentSlide?'1':'.4';d.style.background=i===this.currentSlide?'var(--text-primary)':'var(--text-secondary)';});}
+}
+document.addEventListener('DOMContentLoaded',()=>new SlidePresentation());
+
+/* ---- QR graceful fallback ---- */
+(function(){var q=document.getElementById('qr-img');if(!q)return;q.addEventListener('error',function(){var d=document.createElement('div');d.className='qr-fallback';d.textContent='Open the form link I shared to vote';q.replaceWith(d);});})();
+</script>
+
+<script>
+/* ---- live poll (Google Form → Sheet) ---- */
+const LIVE_POLL = {
+  demo: false,                 // true or ?demo=1 → preview with fake data
+  options: ['Yes','No'],       // fixed order; both show from 0%
+  intervalMs: 5000,
+  sheetId: '1-wBFxQlgACSh6WjOw00HrS-YtJqDTMj2d7knQloymaA',
+  gid: '155191099',
+  sheetName: 'Form Responses 1',
+  answerHeader: ''             // '' = last column (the question)
+};
+
+(function(){
+  const wrap = document.getElementById('poll-bars');
+  const totalEl = document.getElementById('poll-total');
+  if(!wrap) return;
+  const demo = LIVE_POLL.demo || /[?&]demo\b/.test(location.search);
+  const fixed = (LIVE_POLL.options || []).slice();
+  const demoOpts = ['Yes','No'];
+  let counts = {};
+  fixed.forEach(o => counts[o] = 0);
+
+  const rows = {};
+  function ensureRow(opt){
+    if(rows[opt]) return rows[opt];
+    const row = document.createElement('div'); row.className = 'poll-row'; row.dataset.opt = opt;
+    row.innerHTML =
+      '<div class="poll-head"><span class="poll-opt"></span>' +
+      '<span class="poll-pct"><span class="p">0%</span><span class="n">0</span></span></div>' +
+      '<div class="poll-track"><div class="poll-fill"></div></div>';
+    row.querySelector('.poll-opt').textContent = opt;
+    wrap.appendChild(row); rows[opt] = row; return row;
+  }
+  fixed.forEach(ensureRow);
+
+  let waitEl = null;
+  function setWaiting(on){
+    if(on && !waitEl){ waitEl = document.createElement('div'); waitEl.className = 'poll-wait';
+      waitEl.textContent = 'Waiting for the first responses…'; wrap.appendChild(waitEl); }
+    else if(!on && waitEl){ waitEl.remove(); waitEl = null; }
+  }
+
+  function render(){
+    const keys = Object.keys(counts);
+    const total = keys.reduce((a,k)=>a+counts[k],0);
+    totalEl.textContent = total.toLocaleString();
+    setWaiting(total === 0 && fixed.length === 0);
+    const order = fixed.length ? fixed.slice() : keys.slice().sort((a,b)=>counts[b]-counts[a]);
+    order.forEach(opt => {
+      const row = ensureRow(opt); wrap.appendChild(row);
+      const c = counts[opt] || 0, pct = total ? Math.round(c/total*100) : 0;
+      row.querySelector('.poll-fill').style.width = pct + '%';
+      row.querySelector('.p').textContent = pct + '%';
+      row.querySelector('.n').textContent = c.toLocaleString();
+    });
+  }
+
+  async function fetchLive(){
+    const q = LIVE_POLL.gid ? ('gid=' + encodeURIComponent(LIVE_POLL.gid))
+                            : ('sheet=' + encodeURIComponent(LIVE_POLL.sheetName || ''));
+    const url = 'https://docs.google.com/spreadsheets/d/' + LIVE_POLL.sheetId +
+                '/gviz/tq?tqx=out:json&headers=1&' + q;
+    const txt = await (await fetch(url, {cache:'no-store'})).text();
+    if(txt.indexOf('google.visualization') < 0) throw new Error('sheet not public yet');
+    const json = JSON.parse(txt.substring(txt.indexOf('(')+1, txt.lastIndexOf(')')));
+    const cols = (json.table.cols||[]).map(c => (c.label||'').trim());
+    let idx = LIVE_POLL.answerHeader ? cols.indexOf(LIVE_POLL.answerHeader) : cols.length-1;
+    if(idx < 0) idx = cols.length-1;
+    const next = {}; fixed.forEach(o => next[o] = 0);
+    (json.table.rows||[]).forEach(r => {
+      const cell = r.c && r.c[idx];
+      const v = cell && cell.v != null ? String(cell.v).trim() : '';
+      if(!v) return;
+      if(fixed.length){ if(v in next) next[v]++; }
+      else next[v] = (next[v]||0) + 1;
+    });
+    counts = next;
+  }
+
+  function demoTick(){
+    const o = fixed.length ? fixed : demoOpts;
+    o.forEach(x => { if(!(x in counts)) counts[x] = 0; });
+    const n = 1 + Math.floor(Math.random()*4);
+    for(let i=0;i<n;i++){
+      const r = Math.random();
+      const opt = r < 0.6 ? o[0] : (o[1]||o[0]);
+      counts[opt] = (counts[opt]||0) + 1;
+    }
+  }
+
+  async function tick(){
+    try{ demo ? demoTick() : await fetchLive(); render(); }
+    catch(e){ render(); }
+  }
+  tick();
+  setInterval(tick, LIVE_POLL.intervalMs);
+})();
+</script>
+</body>
+</html>
