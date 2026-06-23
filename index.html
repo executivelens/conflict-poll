@@ -59,15 +59,33 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .cover .sub .by{display:block;font-size:.7em;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.45rem}
 .cover.visible h1{transition-delay:.05s}.cover.visible .sub{transition-delay:.22s}
 
-/* ---- divider / warm-up ---- */
-.divider{align-items:center;text-align:center}
-.divider .eyebrow{justify-content:center}
-.divider h2{font-size:clamp(2.8rem,6vw,5rem);line-height:1.05;max-width:18ch}
-.divider .lead{margin-left:auto;margin-right:auto;text-align:center;max-width:34ch}
-.warmup-cue{margin-top:clamp(2rem,5vh,3.4rem);display:flex;justify-content:center}
+/* ---- divider / warm-up (high-energy hero) ---- */
+.divider{align-items:center;text-align:center;overflow:hidden}
+.wu-aura{position:absolute;border-radius:50%;pointer-events:none;z-index:0;filter:blur(44px)}
+.wu-aura.a1{width:46vw;height:46vw;left:6vw;top:5vh;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,transparent),transparent 68%);animation:wuDrift1 9s ease-in-out infinite}
+.wu-aura.a2{width:42vw;height:42vw;right:5vw;bottom:4vh;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 17%,transparent),transparent 68%);animation:wuDrift2 11s ease-in-out infinite}
+@keyframes wuDrift1{0%,100%{transform:translate(0,0) scale(1);opacity:.7}50%{transform:translate(5%,4%) scale(1.14);opacity:1}}
+@keyframes wuDrift2{0%,100%{transform:translate(0,0) scale(1);opacity:.55}50%{transform:translate(-5%,-4%) scale(1.16);opacity:.85}}
+.wu-title{position:relative;z-index:1;font-weight:800;letter-spacing:-.03em;line-height:1.05;font-size:clamp(3rem,8.4vw,6.8rem)}
+.wu-title .line{display:block}
+.divider .w{display:inline-block;opacity:0;transform:translateY(28px) scale(.68);filter:blur(8px);transition:opacity .55s cubic-bezier(.34,1.56,.64,1) var(--d,0s),transform .68s cubic-bezier(.34,1.56,.64,1) var(--d,0s),filter .5s ease var(--d,0s);will-change:transform,opacity}
+.divider.visible .w{opacity:1;transform:none;filter:none}
+.wu-accent{position:relative;display:inline-block;color:var(--text-primary)}
+.wu-accent .hl{position:absolute;left:-.14em;right:-.14em;top:.1em;bottom:.06em;z-index:-1;border-radius:.42em;background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 42%,#fff),color-mix(in srgb,var(--accent) 24%,#fff));transform:scaleX(0) rotate(-1.4deg);transform-origin:left center;transition:transform .7s cubic-bezier(.16,1,.3,1) .9s;box-shadow:0 10px 34px rgba(0,113,227,.20)}
+.divider.visible .wu-accent .hl{transform:scaleX(1) rotate(-1.4deg);animation:hlGlow 3s ease-in-out 1.7s infinite}
+@keyframes hlGlow{0%,100%{box-shadow:0 10px 34px rgba(0,113,227,.20)}50%{box-shadow:0 14px 50px rgba(0,113,227,.46)}}
+.wu-accent .spark{position:absolute;z-index:2;width:clamp(13px,1.5vw,22px);height:clamp(13px,1.5vw,22px);pointer-events:none;background:var(--accent);opacity:0;clip-path:polygon(50% 0,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 41%)}
+.wu-accent .spark.s1{top:-.55em;left:-.25em}
+.wu-accent .spark.s2{top:-.4em;right:-.15em}
+.wu-accent .spark.s3{bottom:-.3em;right:.5em}
+.divider.visible .wu-accent .spark.s1{animation:sparkle 2.2s ease-in-out 1.45s infinite}
+.divider.visible .wu-accent .spark.s2{animation:sparkle 2.2s ease-in-out 1.85s infinite}
+.divider.visible .wu-accent .spark.s3{animation:sparkle 2.2s ease-in-out 2.25s infinite}
+@keyframes sparkle{0%,100%{opacity:0;transform:scale(.2) rotate(0deg)}45%{opacity:1;transform:scale(1) rotate(50deg)}}
+.warmup-cue{margin-top:clamp(2.4rem,5.5vh,3.8rem);display:flex;justify-content:center;position:relative;z-index:1}
 .warmup-cue svg{width:clamp(34px,4vw,52px)}
-@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
-.bob{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+.bob{animation:bob 2.2s ease-in-out infinite}
 
 /* ---- live poll ---- */
 .live-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:#34c759;margin:0 .5em 0 0;vertical-align:middle;animation:livePulse 1.6s ease-in-out infinite}
@@ -108,11 +126,24 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   </div>
 </section>
 
-<!-- 2 · Warm-up divider -->
-<section class="slide vcenter divider">
-  <span class="eyebrow reveal">Warm-up</span>
-  <h2 class="reveal from-blur">Before we begin,<br>let's <span class="accentword">warm up</span>.</h2>
-  <p class="lead reveal">One honest question — no right answer. Then we start.</p>
+<!-- 2 · Warm-up divider (animated hero) -->
+<section class="slide vcenter divider" id="warmup">
+  <div class="wu-aura a1" aria-hidden="true"></div>
+  <div class="wu-aura a2" aria-hidden="true"></div>
+  <h2 class="wu-title" aria-label="Before we begin, let's warm up.">
+    <span class="line">
+      <span class="w" style="--d:.04s">Before</span>
+      <span class="w" style="--d:.12s">we</span>
+      <span class="w" style="--d:.20s">begin,</span>
+    </span>
+    <span class="line">
+      <span class="w" style="--d:.30s">let's</span>
+      <span class="wu-accent">
+        <span class="hl" aria-hidden="true"></span>
+        <span class="w" style="--d:.40s">warm</span> <span class="w" style="--d:.48s">up</span>
+      </span><span class="w" style="--d:.54s">.</span>
+    </span>
+  </h2>
   <div class="warmup-cue reveal" aria-hidden="true">
     <svg viewBox="0 0 40 24" class="bob"><path d="M6 6 L20 18 L34 6" fill="none" stroke="var(--accent)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
