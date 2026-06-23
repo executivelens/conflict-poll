@@ -127,9 +127,9 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .magic-stat .stattext b{color:var(--accent)}
 .magic-q{position:relative;z-index:1;margin-top:clamp(.4rem,1.4vh,1rem);font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:700;color:var(--text-secondary)}
 .magic-q .accentword{color:var(--accent);font-style:italic}
-.magic-hero{position:relative;z-index:1;margin:clamp(.4rem,1.4vh,1rem) 0 clamp(1.8rem,4vh,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.12;font-size:clamp(3rem,9vw,7rem);background:linear-gradient(100deg,#0071e3 0%,#4da3ff 26%,#a9d6ff 46%,#4da3ff 66%,#0071e3 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite;opacity:0;transform:scale(.72) translateY(18px);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .72s cubic-bezier(.34,1.56,.64,1) .15s}
+.magic-hero{position:relative;z-index:1;margin:clamp(.4rem,1.4vh,1rem) 0 clamp(1.8rem,4vh,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.12;font-size:clamp(3rem,9vw,7rem);background:linear-gradient(100deg,#0071e3 0%,#4da3ff 25%,#a9d6ff 50%,#4da3ff 75%,#0071e3 100%);background-size:200% 100%;background-repeat:repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite;will-change:background-position;opacity:0;transform:scale(.72) translateY(18px);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .72s cubic-bezier(.34,1.56,.64,1) .15s}
 .magic.visible .magic-hero{opacity:1;transform:none}
-@keyframes shimmer{to{background-position:-220% 0}}
+@keyframes shimmer{from{background-position:0 0}to{background-position:-200% 0}}
 .magic-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.55em;background:var(--accent);color:#fff;font-weight:800;font-size:clamp(1.25rem,2.4vw,1.9rem);letter-spacing:-.01em;padding:.6em 1.3em;border-radius:999px;box-shadow:0 14px 40px rgba(0,113,227,.3);opacity:0;transform:translateY(14px);transition:opacity .55s ease .9s,transform .55s ease .9s}
 .magic.visible .magic-cta{opacity:1;transform:none;animation:ctaPulse 2.2s ease-in-out 1.6s infinite}
 .magic-cta .play{display:inline-grid;place-items:center;width:1.02em;height:1.02em}
