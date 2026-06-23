@@ -59,6 +59,16 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .cover .sub .by{display:block;font-size:.7em;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.45rem}
 .cover.visible h1{transition-delay:.05s}.cover.visible .sub{transition-delay:.22s}
 
+/* ---- divider / warm-up ---- */
+.divider{align-items:center;text-align:center}
+.divider .eyebrow{justify-content:center}
+.divider h2{font-size:clamp(2.8rem,6vw,5rem);line-height:1.05;max-width:18ch}
+.divider .lead{margin-left:auto;margin-right:auto;text-align:center;max-width:34ch}
+.warmup-cue{margin-top:clamp(2rem,5vh,3.4rem);display:flex;justify-content:center}
+.warmup-cue svg{width:clamp(34px,4vw,52px)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.bob{animation:bob 2.4s ease-in-out infinite}
+
 /* ---- live poll ---- */
 .live-dot{display:inline-block;width:.62em;height:.62em;border-radius:50%;background:#34c759;margin:0 .5em 0 0;vertical-align:middle;animation:livePulse 1.6s ease-in-out infinite}
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}
@@ -98,7 +108,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   </div>
 </section>
 
-<!-- 2 · Live warm-up poll -->
+<!-- 2 · Warm-up divider -->
+<section class="slide vcenter divider">
+  <span class="eyebrow reveal">Warm-up</span>
+  <h2 class="reveal from-blur">Before we begin,<br>let's <span class="accentword">warm up</span>.</h2>
+  <p class="lead reveal">One honest question — no right answer. Then we start.</p>
+  <div class="warmup-cue reveal" aria-hidden="true">
+    <svg viewBox="0 0 40 24" class="bob"><path d="M6 6 L20 18 L34 6" fill="none" stroke="var(--accent)" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- 3 · Live warm-up poll -->
 <section class="slide vcenter" id="live-poll">
   <span class="eyebrow reveal"><span class="live-dot"></span>Live warm-up · A survey of conflict direction</span>
   <h2 class="reveal" id="poll-q">Have you ever been given <span class="accentword">conflicting directions</span> — from your boss, your skip, or stakeholders — and felt stuck in between?</h2>
