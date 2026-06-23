@@ -136,6 +136,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .magic-cta .play svg{width:100%;height:100%}
 @keyframes ctaPulse{0%,100%{transform:scale(1);box-shadow:0 14px 40px rgba(0,113,227,.3)}50%{transform:scale(1.045);box-shadow:0 20px 56px rgba(0,113,227,.46)}}
 
+/* ---- page 5: reaction / clap ---- */
+.react{align-items:center;text-align:center;overflow:hidden}
+.react .r-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
+.react-q{position:relative;z-index:1;font-weight:800;letter-spacing:-.03em;line-height:1.06;font-size:clamp(3rem,8vw,6rem)}
+.react-q .accentword{color:var(--accent);font-style:italic}
+.react-cta{position:relative;z-index:1;margin-top:clamp(1.8rem,4.5vh,3.2rem);font-size:clamp(1.45rem,2.8vw,2.2rem);font-weight:700;color:var(--text-primary);max-width:22ch;line-height:1.35}
+.react-cta b{color:var(--accent)}
+.react-cta .clap{display:inline-block;font-size:1.7em;line-height:1;vertical-align:-.28em;margin:0 .1em;transform-origin:center}
+.react.visible .react-cta .clap{animation:clap 1s ease-in-out .6s infinite}
+@keyframes clap{0%,100%{transform:rotate(-13deg) scale(1)}50%{transform:rotate(13deg) scale(1.18)}}
+
 @media (max-width:900px){.poll-layout{flex-direction:column;align-items:flex-start}}
 @media (max-height:600px){.nav-dots{display:none}}
 </style>
@@ -207,6 +218,13 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5 L19 12 L7 19 Z" fill="currentColor"/></svg></span>
     Let's do a live demo!
   </div>
+</section>
+
+<!-- 5 · Reaction / clap -->
+<section class="slide vcenter react" id="react">
+  <div class="r-aura" aria-hidden="true"></div>
+  <h2 class="react-q reveal from-blur">What happened <span class="accentword">here</span>?</h2>
+  <p class="react-cta reveal">Give me a <span class="clap">👏</span> if you feel <b>surprised</b> or <b>astonished</b>!</p>
 </section>
 
 <script>
