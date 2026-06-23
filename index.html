@@ -118,9 +118,15 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 /* ---- page 4: live demo / Magic Time ---- */
 .magic{align-items:center;text-align:center;overflow:hidden}
 .magic .m-aura{position:absolute;z-index:0;width:62vw;height:62vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 16%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
-.magic-q{position:relative;z-index:1;font-size:clamp(1.5rem,3vw,2.4rem);font-weight:700;color:var(--text-secondary)}
+.magic-lead{position:relative;z-index:1;font-size:clamp(1.25rem,2.3vw,1.75rem);font-weight:600;color:var(--text-secondary);max-width:34ch;line-height:1.4}
+.magic-lead .accentword{color:var(--accent);font-style:italic}
+.magic-stat{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:clamp(.7rem,1.8vw,1.3rem);margin:clamp(.9rem,2.2vh,1.6rem) 0;flex-wrap:wrap}
+.magic-stat .statpct{font-weight:900;color:var(--accent);font-size:clamp(2.8rem,7vw,5.4rem);line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.magic-stat .stattext{text-align:left;max-width:17ch;font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:700;line-height:1.25}
+.magic-stat .stattext b{color:var(--accent)}
+.magic-q{position:relative;z-index:1;margin-top:clamp(.4rem,1.4vh,1rem);font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:700;color:var(--text-secondary)}
 .magic-q .accentword{color:var(--accent);font-style:italic}
-.magic-hero{position:relative;z-index:1;margin:clamp(.6rem,1.6vh,1.2rem) 0 clamp(2.8rem,6vh,4.2rem);font-weight:900;letter-spacing:-.03em;line-height:1.12;font-size:clamp(4rem,13vw,10rem);background:linear-gradient(100deg,#0071e3 0%,#4da3ff 26%,#a9d6ff 46%,#4da3ff 66%,#0071e3 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite;opacity:0;transform:scale(.72) translateY(18px);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .72s cubic-bezier(.34,1.56,.64,1) .15s}
+.magic-hero{position:relative;z-index:1;margin:clamp(.4rem,1.4vh,1rem) 0 clamp(1.8rem,4vh,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.12;font-size:clamp(3rem,9vw,7rem);background:linear-gradient(100deg,#0071e3 0%,#4da3ff 26%,#a9d6ff 46%,#4da3ff 66%,#0071e3 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 4s linear infinite;opacity:0;transform:scale(.72) translateY(18px);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .72s cubic-bezier(.34,1.56,.64,1) .15s}
 .magic.visible .magic-hero{opacity:1;transform:none}
 @keyframes shimmer{to{background-position:-220% 0}}
 .magic-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.55em;background:var(--accent);color:#fff;font-weight:800;font-size:clamp(1.25rem,2.4vw,1.9rem);letter-spacing:-.01em;padding:.6em 1.3em;border-radius:999px;box-shadow:0 14px 40px rgba(0,113,227,.3);opacity:0;transform:translateY(14px);transition:opacity .55s ease .9s,transform .55s ease .9s}
@@ -190,6 +196,11 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 4 · Live demo / Magic Time -->
 <section class="slide vcenter magic" id="magic">
   <div class="m-aura" aria-hidden="true"></div>
+  <p class="magic-lead reveal">So many people feel stuck — because they were given <span class="accentword">conflicting directions</span>.</p>
+  <div class="magic-stat reveal">
+    <span class="statpct" id="m-yes-pct">0%</span>
+    <span class="stattext"><b id="m-yes-count">0</b> of <b id="m-yes-total">0</b> in the room said they felt exactly that.</span>
+  </div>
   <p class="magic-q reveal">So… what made you feel <span class="accentword">stuck</span>?</p>
   <h2 class="magic-hero">Magic Time!</h2>
   <div class="magic-cta">
@@ -264,6 +275,11 @@ const LIVE_POLL = {
     const total = keys.reduce((a,k)=>a+counts[k],0);
     totalEl.textContent = total.toLocaleString();
     setWaiting(total === 0 && fixed.length === 0);
+    // link the live "Yes" number to page 4
+    const yes4 = counts['Yes'] || 0, pct4 = total ? Math.round(yes4/total*100) : 0;
+    const e1 = document.getElementById('m-yes-count'); if(e1) e1.textContent = yes4;
+    const e2 = document.getElementById('m-yes-total'); if(e2) e2.textContent = total;
+    const e3 = document.getElementById('m-yes-pct');   if(e3) e3.textContent = pct4 + '%';
     const order = fixed.length ? fixed.slice() : keys.slice().sort((a,b)=>counts[b]-counts[a]);
     order.forEach(opt => {
       const row = ensureRow(opt); wrap.appendChild(row);
