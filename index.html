@@ -122,7 +122,8 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .magic-lead .accentword{color:var(--accent);font-style:italic}
 .magic-stat{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:clamp(.7rem,1.8vw,1.3rem);margin:clamp(.9rem,2.2vh,1.6rem) 0;flex-wrap:wrap}
 .magic-stat .statpct{font-weight:900;color:var(--accent);font-size:clamp(2.8rem,7vw,5.4rem);line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.magic-stat .stattext{text-align:left;max-width:17ch;font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:700;line-height:1.25}
+.magic-stat .stattext{text-align:left;max-width:20ch;font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:700;line-height:1.25}
+.magic-stat .stattext .accentword{color:var(--accent);font-style:normal}
 .magic-stat .stattext b{color:var(--accent)}
 .magic-q{position:relative;z-index:1;margin-top:clamp(.4rem,1.4vh,1rem);font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:700;color:var(--text-secondary)}
 .magic-q .accentword{color:var(--accent);font-style:italic}
@@ -196,10 +197,9 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 4 · Live demo / Magic Time -->
 <section class="slide vcenter magic" id="magic">
   <div class="m-aura" aria-hidden="true"></div>
-  <p class="magic-lead reveal">So many people feel stuck — because they were given <span class="accentword">conflicting directions</span>.</p>
   <div class="magic-stat reveal">
     <span class="statpct" id="m-yes-pct">0%</span>
-    <span class="stattext"><b id="m-yes-count">0</b> of <b id="m-yes-total">0</b> in the room said they felt exactly that.</span>
+    <span class="stattext"><b id="m-yes-count">0</b> of <b id="m-yes-total">0</b> in the room said they felt <span class="accentword">stuck because of conflicting directions</span>.</span>
   </div>
   <p class="magic-q reveal">So… what made you feel <span class="accentword">stuck</span>?</p>
   <h2 class="magic-hero">Magic Time!</h2>
