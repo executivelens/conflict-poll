@@ -134,33 +134,33 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .magic-lead{position:relative;z-index:1;font-size:clamp(1.25rem,2.3vw,1.75rem);font-weight:600;color:var(--text-secondary);max-width:34ch;line-height:1.4}
 .magic-lead .accentword{color:var(--accent);font-style:italic}
 .magic-stat{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;gap:clamp(.7rem,1.8vw,1.3rem);margin:clamp(.9rem,2.2vh,1.6rem) 0;flex-wrap:wrap}
-.magic-stat .statpct{font-weight:900;color:var(--accent);font-size:clamp(2.8rem,7vw,5.4rem);line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.magic-stat .stattext{text-align:left;max-width:20ch;font-size:clamp(1.1rem,1.8vw,1.45rem);font-weight:700;line-height:1.25}
+.magic-stat .statpct{font-weight:900;color:var(--accent);font-size:clamp(3.5rem,8.75vw,6.75rem);line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.magic-stat .stattext{text-align:left;max-width:20ch;font-size:clamp(1.38rem,2.25vw,1.8rem);font-weight:700;line-height:1.25}
 .magic-stat .stattext .accentword{color:var(--accent);font-style:normal}
 .magic-stat .stattext b{color:var(--accent)}
-.magic-q{position:relative;z-index:1;margin-top:clamp(.4rem,1.4vh,1rem);font-size:clamp(1.35rem,2.5vw,1.95rem);font-weight:700;color:var(--text-secondary)}
+.magic-q{position:relative;z-index:1;margin-top:clamp(.4rem,1.4vh,1rem);font-size:clamp(1.7rem,3.1vw,2.45rem);font-weight:700;color:var(--text-secondary)}
 .magic-q .accentword{color:var(--accent);font-style:italic}
 .magic-hero{position:relative;z-index:1;margin:clamp(.4rem,1.4vh,1rem) 0 clamp(1.8rem,4vh,2.8rem);font-weight:900;letter-spacing:-.03em;line-height:1.12;font-size:clamp(3rem,9vw,7rem);background:linear-gradient(100deg,#0071e3 0%,#4da3ff 25%,#a9d6ff 50%,#4da3ff 75%,#0071e3 100%);background-size:200% 100%;background-repeat:repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite;will-change:background-position;opacity:0;transform:scale(.72) translateY(18px);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .72s cubic-bezier(.34,1.56,.64,1) .15s}
 .magic.visible .magic-hero{opacity:1;transform:none}
 @keyframes shimmer{from{background-position:0 0}to{background-position:-200% 0}}
-.magic-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.55em;background:var(--accent);color:#fff;font-weight:800;font-size:clamp(1.25rem,2.4vw,1.9rem);letter-spacing:-.01em;padding:.6em 1.3em;border-radius:999px;box-shadow:0 14px 40px rgba(0,113,227,.3);opacity:0;transform:translateY(14px);transition:opacity .55s ease .9s,transform .55s ease .9s}
+.magic-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:.55em;background:var(--accent);color:#fff;font-weight:800;font-size:clamp(1.55rem,3vw,2.35rem);letter-spacing:-.01em;padding:.6em 1.3em;border-radius:999px;box-shadow:0 14px 40px rgba(0,113,227,.3);opacity:0;transform:translateY(14px);transition:opacity .55s ease .9s,transform .55s ease .9s}
 .magic.visible .magic-cta{opacity:1;transform:none;animation:ctaPulse 2.2s ease-in-out 1.6s infinite}
 .magic-cta .play{display:inline-grid;place-items:center;width:1.02em;height:1.02em}
 .magic-cta .play svg{width:100%;height:100%}
 @keyframes ctaPulse{0%,100%{transform:scale(1);box-shadow:0 14px 40px rgba(0,113,227,.3)}50%{transform:scale(1.045);box-shadow:0 20px 56px rgba(0,113,227,.46)}}
 
 /* ---- page 9: quote (same gradient-shimmer hero as Moment of truth) ---- */
-.magic-hero.quotehero{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:18ch;margin:0 auto;line-height:1.14}
-.quote-attr{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:700;color:var(--text-secondary)}
+.magic-hero.quotehero{font-size:clamp(2.9rem,6.75vw,5.5rem);max-width:18ch;margin:0 auto;line-height:1.14}
+.quote-attr{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);font-size:clamp(1.5rem,2.5vw,2.1rem);font-weight:700;color:var(--text-secondary)}
 .quote-attr b{color:var(--text-primary)}
 
 /* ---- pages 10-11: performance review reveal ---- */
 .rejected{align-items:center;text-align:center;overflow:hidden}
-.rej-lead{position:relative;z-index:1;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:var(--text-secondary)}
+.rej-lead{position:relative;z-index:1;font-size:clamp(1.75rem,3.25vw,2.5rem);font-weight:600;color:var(--text-secondary)}
 .rej-words{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);display:flex;flex-direction:column;gap:clamp(.9rem,2.2vh,1.5rem)}
-.rej{font-weight:800;letter-spacing:-.02em;font-size:clamp(2.2rem,5.2vw,4.2rem);color:var(--text-secondary);text-decoration:line-through;text-decoration-thickness:.055em;text-decoration-color:var(--accent)}
-.perf-lead{position:relative;z-index:1;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:var(--text-secondary)}
-.perf-line{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;font-size:clamp(2.8rem,7.2vw,5.8rem);color:var(--text-primary);opacity:0;transform:scale(.8);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .12s,transform .7s cubic-bezier(.34,1.56,.64,1) .12s}
+.rej{font-weight:800;letter-spacing:-.02em;font-size:clamp(2.75rem,6.5vw,5.25rem);color:var(--text-secondary);text-decoration:line-through;text-decoration-thickness:.055em;text-decoration-color:var(--accent)}
+.perf-lead{position:relative;z-index:1;font-size:clamp(1.75rem,3.25vw,2.5rem);font-weight:600;color:var(--text-secondary)}
+.perf-line{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;font-size:clamp(3.5rem,9vw,7.25rem);color:var(--text-primary);opacity:0;transform:scale(.8);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .12s,transform .7s cubic-bezier(.34,1.56,.64,1) .12s}
 .perf.visible .perf-line{opacity:1;transform:none}
 .shimmer-text{background:linear-gradient(100deg,#0071e3 0%,#4da3ff 25%,#a9d6ff 50%,#4da3ff 75%,#0071e3 100%);background-size:200% 100%;background-repeat:repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
 
@@ -229,6 +229,14 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 @media (max-width:900px){.poll-layout{flex-direction:column;align-items:flex-start}.mshow-body{flex-direction:column}}
 @media (max-height:600px){.nav-dots{display:none}}
+
+/* page 3 hero +25% (scoped, leaves Moment of truth alone) */
+#magic .magic-hero{font-size:clamp(3.75rem,11vw,8.75rem)}
+/* page 7 sound-familiar: bigger title higher, bigger image */
+#soundfamiliar{justify-content:flex-start}
+#soundfamiliar .mshow-title{font-size:clamp(2.7rem,5.4vw,4.4rem)}
+#soundfamiliar .mshow-body{margin-top:clamp(1.8rem,4.5vh,3.4rem)}
+#soundfamiliar .ny-img{max-width:620px;max-height:72vh}
 </style>
 </head>
 <body>
@@ -395,6 +403,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     <div class="hm-step"><span class="hm-num">1</span><span>Know <b>who's going to be in</b> your performance review.</span></div>
     <div class="hm-step"><span class="hm-num">2</span><span><b>Influence them</b> to speak positively about you in that meeting.</span></div>
   </div>
+</section>
+
+<!-- 14 · Let's reverse engineer it -->
+<section class="slide vcenter magic perf" id="reverse">
+  <div class="m-aura" aria-hidden="true"></div>
+  <h2 class="perf-line">Let's <span class="shimmer-text">reverse-engineer</span> it.</h2>
 </section>
 
 <script>
