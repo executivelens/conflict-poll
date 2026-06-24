@@ -298,6 +298,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .mech-pay .big{color:var(--accent);font-weight:900}
 .mech-pay .muted{color:var(--text-secondary);font-weight:600}
 @media (max-width:900px){.mech-arrow{transform:rotate(90deg)}}
+
+/* page 20: those labels -> your performance review rating */
+#rating{text-align:center;align-items:center;overflow:hidden}
+.rate-title{position:relative;z-index:1;font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:24ch;margin:0 auto}
+.rate-title .accentword{color:var(--accent);font-style:italic}
+.rate-result{position:relative;z-index:1;margin-top:clamp(1.6rem,3.6vh,2.6rem);font-size:clamp(1.7rem,2.9vw,2.5rem);font-weight:800;color:var(--text-primary);max-width:30ch;margin-left:auto;margin-right:auto;line-height:1.2}
 </style>
 </head>
 <body>
@@ -571,6 +577,30 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     </div>
   </div>
   <p class="mech-pay reveal">Ten labels would blow the budget — so only the <span class="big">3–5 most obvious</span> survive. <span class="muted">That's who you are in their mind.</span></p>
+</section>
+
+<!-- 20 · Those labels become your performance review rating -->
+<section class="slide vcenter" id="rating">
+  <h2 class="rate-title reveal">Whatever <span class="accentword">3–5 labels</span> these four hold about you…</h2>
+  <div class="panel-grid stagger">
+    <div class="pcard">
+      <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 19.5c0-3.6 2.9-6.3 6.5-6.3s6.5 2.7 6.5 6.3"/></svg></span>
+      <h3>Your Manager</h3>
+    </div>
+    <div class="pcard">
+      <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 5.2 12 2.5 14.7 5.2"/><circle cx="12" cy="10.3" r="3"/><path d="M6 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/></svg></span>
+      <h3>Skip Level</h3>
+    </div>
+    <div class="pcard">
+      <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9.5" r="2.6"/><circle cx="16" cy="9.5" r="2.6"/><path d="M3 19c0-2.8 2.2-4.6 5-4.6M16 14.4c2.8 0 5 1.8 5 4.6"/></svg></span>
+      <h3>Your Boss's Peers</h3>
+    </div>
+    <div class="pcard">
+      <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="4.5" width="11" height="16" rx="2"/><path d="M9.5 4.5h5v2.4h-5z"/><path d="M9.5 11h5M9.5 14.5h3.2"/></svg></span>
+      <h3>HR</h3>
+    </div>
+  </div>
+  <p class="rate-result reveal">…become the outcome of your <span class="shimmer-text">Performance Review</span> rating.</p>
 </section>
 
 <script>
