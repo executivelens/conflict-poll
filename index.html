@@ -245,18 +245,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 /* page 16: who's actually in the room (panel) */
 #who-room{text-align:center;align-items:center;overflow:hidden}
-#who-room .magic-stat{margin:0 0 clamp(.3rem,1.2vh,.9rem)}
-#who-room .statpct{font-size:clamp(3rem,6vw,4.6rem);font-weight:900}
-#who-room .stattext{font-size:clamp(1.3rem,2vw,1.65rem);max-width:22ch}
-.pr-q{position:relative;z-index:1;margin-top:clamp(.5rem,1.4vh,1rem);font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:25ch}
-.panel-grid{margin-top:clamp(1.6rem,3.6vh,2.6rem);display:flex;gap:clamp(.9rem,1.8vw,1.5rem);width:100%;max-width:1120px;justify-content:center;flex-wrap:wrap}
-.pcard{flex:1 1 0;min-width:170px;max-width:250px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:clamp(1.1rem,1.9vw,1.6rem) clamp(.9rem,1.5vw,1.3rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.65rem}
-.pcard .pic{width:clamp(46px,4.2vw,60px);height:clamp(46px,4.2vw,60px);border-radius:14px;background:var(--accent-dim);display:grid;place-items:center}
+.confbar{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:clamp(.9rem,2vw,1.7rem);flex-wrap:wrap;max-width:1100px;margin:0 auto}
+.conf-num{color:var(--accent);font-weight:900;font-size:clamp(3.6rem,7.4vw,6rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.conf-text{font-size:clamp(1.55rem,2.8vw,2.35rem);font-weight:700;line-height:1.2;max-width:26ch;text-align:left}
+.conf-text .accentword{color:var(--accent);font-style:normal;font-weight:800}
+.conf-clap{font-style:normal}
+.pr-q{position:relative;z-index:1;margin-top:clamp(1.4rem,3.2vh,2.4rem);font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:25ch}
+.panel-grid{margin-top:clamp(1.8rem,4vh,3rem);display:flex;gap:clamp(.9rem,1.8vw,1.5rem);width:100%;max-width:1120px;justify-content:center;flex-wrap:wrap}
+.pcard{flex:1 1 0;min-width:170px;max-width:250px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:clamp(1.4rem,2.4vw,2rem) clamp(.9rem,1.5vw,1.3rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem}
+.pcard .pic{width:clamp(48px,4.4vw,64px);height:clamp(48px,4.4vw,64px);border-radius:14px;background:var(--accent-dim);display:grid;place-items:center}
 .pcard .pic svg{width:58%;height:58%;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.pcard h3{font-size:clamp(1.2rem,1.7vw,1.5rem);font-weight:800;letter-spacing:-.01em;line-height:1.1}
-.pcard p{font-size:clamp(1rem,1.3vw,1.18rem);color:var(--text-secondary);line-height:1.32}
-.pr-note{position:relative;z-index:1;margin-top:clamp(1.5rem,3.4vh,2.4rem);font-size:clamp(1.2rem,1.85vw,1.5rem);color:var(--text-secondary);max-width:52ch;line-height:1.4}
-.pr-note b{color:var(--accent);font-weight:800}
+.pcard h3{font-size:clamp(1.3rem,1.9vw,1.65rem);font-weight:800;letter-spacing:-.01em;line-height:1.1}
 </style>
 </head>
 <body>
@@ -452,35 +451,30 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 </section>
 
 <!-- 16 · Who's actually in the room (panel reveal) -->
-<section class="slide" id="who-room">
-  <div class="magic-stat reveal">
-    <span class="statpct"><span id="p16-conf">0</span></span>
-    <span class="stattext">of you are <span class="accentword">confident</span> you already know who's in the room. Nice! 👏</span>
+<section class="slide vcenter" id="who-room">
+  <div class="confbar reveal">
+    <span class="conf-num" id="p16-conf">0</span>
+    <span class="conf-text">of you are <span class="accentword">confident</span> you already know who's in the room <span class="conf-clap">👏</span></span>
   </div>
   <h2 class="pr-q reveal">And for everyone else — <span class="accentword">how do you know</span> who's in your performance review?</h2>
   <div class="panel-grid stagger">
     <div class="pcard">
       <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.3"/><path d="M5.5 19.5c0-3.6 2.9-6.3 6.5-6.3s6.5 2.7 6.5 6.3"/></svg></span>
-      <h3>Your manager</h3>
-      <p>Your direct boss — singular.</p>
+      <h3>Your Manager</h3>
     </div>
     <div class="pcard">
       <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.3 5.2 12 2.5 14.7 5.2"/><circle cx="12" cy="10.3" r="3"/><path d="M6 20c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/></svg></span>
-      <h3>Skip-level</h3>
-      <p>Your boss's manager.</p>
+      <h3>Skip Level</h3>
     </div>
     <div class="pcard">
       <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9.5" r="2.6"/><circle cx="16" cy="9.5" r="2.6"/><path d="M3 19c0-2.8 2.2-4.6 5-4.6M16 14.4c2.8 0 5 1.8 5 4.6"/></svg></span>
-      <h3>Your boss's peers</h3>
-      <p>Other managers in the calibration.</p>
+      <h3>Your Boss's Peers</h3>
     </div>
     <div class="pcard">
       <span class="pic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="4.5" width="11" height="16" rx="2"/><path d="M9.5 4.5h5v2.4h-5z"/><path d="M9.5 11h5M9.5 14.5h3.2"/></svg></span>
       <h3>HR</h3>
-      <p>Runs the panel and keeps it fair.</p>
     </div>
   </div>
-  <p class="pr-note reveal">That's what a performance-review panel typically looks like. Once your boss is in the room, some of these people are their <b>allies</b> — and some are their <b>rivals</b>. We'll get to that later.</p>
 </section>
 
 <script>
