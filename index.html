@@ -237,6 +237,11 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 #soundfamiliar .mshow-title{font-size:clamp(2.7rem,5.4vw,4.4rem)}
 #soundfamiliar .mshow-body{margin-top:clamp(1.8rem,4.5vh,3.4rem)}
 #soundfamiliar .ny-img{max-width:620px;max-height:72vh}
+
+/* page 15: second live poll (confidence survey) */
+#poll2-q{max-width:28ch;font-size:clamp(2.2rem,4.4vw,3.6rem)}
+#live-poll-2 .poll{max-width:880px}
+#live-poll-2 .poll-opt{font-size:clamp(1.15rem,1.7vw,1.5rem)}
 </style>
 </head>
 <body>
@@ -411,6 +416,26 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <h2 class="perf-line">Let's <span class="shimmer-text">reverse-engineer</span> it.</h2>
 </section>
 
+<!-- 15 · Working backwards from people (live confidence survey) -->
+<section class="slide vcenter" id="live-poll-2">
+  <span class="eyebrow reveal"><span class="live-dot"></span>Live poll · Working backwards from people</span>
+  <h2 class="reveal" id="poll2-q">Working backwards from people — <span class="accentword">who's in the room?</span></h2>
+  <div class="poll-layout">
+    <div class="vote-col reveal from-left">
+      <div class="qr-card">
+        <img id="qr-img-2" alt="Scan to open the voting form"
+             src="https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=0&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSe7TpQzLTGHLZ1eMeXhshNaz19HyBiOnTjS-wxK4u2f5rMXFw%2Fviewform">
+      </div>
+      <div class="vote-note">Scan to vote</div>
+      <div class="vote-sub">or use the link I shared</div>
+    </div>
+    <div class="result-col reveal from-right">
+      <div class="poll" id="poll2-bars"></div>
+      <div class="poll-foot"><b id="poll2-total">0</b> responses · refreshes automatically</div>
+    </div>
+  </div>
+</section>
+
 <script>
 /* ---- navigation + page numbers ---- */
 class SlidePresentation{
@@ -435,7 +460,7 @@ class SlidePresentation{
 document.addEventListener('DOMContentLoaded',()=>new SlidePresentation());
 
 /* ---- QR graceful fallback ---- */
-(function(){var q=document.getElementById('qr-img');if(!q)return;q.addEventListener('error',function(){var d=document.createElement('div');d.className='qr-fallback';d.textContent='Open the form link I shared to vote';q.replaceWith(d);});})();
+(function(){document.querySelectorAll('.qr-card img').forEach(function(q){q.addEventListener('error',function(){var d=document.createElement('div');d.className='qr-fallback';d.textContent='Open the form link I shared to vote';q.replaceWith(d);});});})();
 </script>
 
 <script>
@@ -539,6 +564,48 @@ const LIVE_POLL = {
   }
   tick();
   setInterval(tick, LIVE_POLL.intervalMs);
+})();
+</script>
+
+<script>
+const LIVE_POLL2 = {
+  demo:false,
+  options:["Confident that I know who's going be there.","Not quite sure who will be there","What's performance review?"],
+  intervalMs:5000,
+  sheetId:'1Ko355xzirdLPaFGOR2xvG7zGttigN31kc-_2UkSfGa8',
+  gid:'15647375', sheetName:'Form Responses 1', answerHeader:''
+};
+(function(){
+  const wrap=document.getElementById('poll2-bars'); const totalEl=document.getElementById('poll2-total');
+  if(!wrap) return;
+  const demo=LIVE_POLL2.demo || /[?&]demo\b/.test(location.search);
+  const fixed=(LIVE_POLL2.options||[]).slice(); let counts={}; fixed.forEach(o=>counts[o]=0);
+  const rows={};
+  function ensureRow(opt){ if(rows[opt]) return rows[opt];
+    const row=document.createElement('div'); row.className='poll-row'; row.dataset.opt=opt;
+    row.innerHTML='<div class="poll-head"><span class="poll-opt"></span><span class="poll-pct"><span class="p">0%</span><span class="n">0</span></span></div><div class="poll-track"><div class="poll-fill"></div></div>';
+    row.querySelector('.poll-opt').textContent=opt; wrap.appendChild(row); rows[opt]=row; return row; }
+  fixed.forEach(ensureRow);
+  function render(){ const keys=Object.keys(counts); const total=keys.reduce((a,k)=>a+counts[k],0);
+    totalEl.textContent=total.toLocaleString();
+    const order=fixed.length?fixed.slice():keys.slice().sort((a,b)=>counts[b]-counts[a]);
+    order.forEach(opt=>{ const row=ensureRow(opt); wrap.appendChild(row);
+      const c=counts[opt]||0, pct=total?Math.round(c/total*100):0;
+      row.querySelector('.poll-fill').style.width=pct+'%'; row.querySelector('.p').textContent=pct+'%'; row.querySelector('.n').textContent=c.toLocaleString(); }); }
+  async function fetchLive(){
+    const q=LIVE_POLL2.gid?('gid='+encodeURIComponent(LIVE_POLL2.gid)):('sheet='+encodeURIComponent(LIVE_POLL2.sheetName||''));
+    const url='https://docs.google.com/spreadsheets/d/'+LIVE_POLL2.sheetId+'/gviz/tq?tqx=out:json&headers=1&'+q;
+    const txt=await (await fetch(url,{cache:'no-store'})).text();
+    if(txt.indexOf('google.visualization')<0) throw new Error('not public');
+    const json=JSON.parse(txt.substring(txt.indexOf('(')+1, txt.lastIndexOf(')')));
+    const cols=(json.table.cols||[]).map(c=>(c.label||'').trim());
+    let idx=LIVE_POLL2.answerHeader?cols.indexOf(LIVE_POLL2.answerHeader):cols.length-1; if(idx<0) idx=cols.length-1;
+    const next={}; fixed.forEach(o=>next[o]=0);
+    (json.table.rows||[]).forEach(r=>{ const cell=r.c&&r.c[idx]; const v=cell&&cell.v!=null?String(cell.v).trim():''; if(!v) return; if(fixed.length){ if(v in next) next[v]++; } else next[v]=(next[v]||0)+1; });
+    counts=next; }
+  function demoTick(){ const o=fixed; o.forEach(x=>{if(!(x in counts))counts[x]=0;}); const n=1+Math.floor(Math.random()*4); for(let i=0;i<n;i++){const opt=o[Math.floor(Math.random()*o.length)]; counts[opt]=(counts[opt]||0)+1;} }
+  async function tick(){ try{ demo?demoTick():await fetchLive(); render(); }catch(e){ render(); } }
+  tick(); setInterval(tick, LIVE_POLL2.intervalMs);
 })();
 </script>
 </body>
