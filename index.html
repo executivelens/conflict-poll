@@ -304,6 +304,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .rate-title{position:relative;z-index:1;font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:24ch;margin:0 auto}
 .rate-title .accentword{color:var(--accent);font-style:italic}
 .rate-result{position:relative;z-index:1;margin-top:clamp(1.6rem,3.6vh,2.6rem);font-size:clamp(1.7rem,2.9vw,2.5rem);font-weight:800;color:var(--text-primary);max-width:30ch;margin-left:auto;margin-right:auto;line-height:1.2}
+
+/* page 21: how do I create the labels (question) */
+#create-labels{text-align:center;align-items:center;overflow:hidden}
+#create-labels .ask-aura{position:absolute;z-index:0;width:62vw;height:62vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
+.ask-q{position:relative;z-index:1;font-weight:900;letter-spacing:-.03em;line-height:1.08;font-size:clamp(2.6rem,6.2vw,5rem);max-width:20ch;margin:0 auto}
+.ask-q .accentword{color:var(--accent);font-style:italic}
 </style>
 </head>
 <body>
@@ -601,6 +607,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     </div>
   </div>
   <p class="rate-result reveal">…become the outcome of your <span class="shimmer-text">Performance Review</span> rating.</p>
+</section>
+
+<!-- 21 · How do I create the labels I want? (question) -->
+<section class="slide vcenter" id="create-labels">
+  <div class="ask-aura" aria-hidden="true"></div>
+  <h2 class="ask-q reveal from-blur">So how do I <span class="accentword">create the labels</span> I want people to see me as?</h2>
 </section>
 
 <script>
