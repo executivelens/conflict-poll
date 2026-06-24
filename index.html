@@ -307,7 +307,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 /* page 21: how do I create the labels (question) */
 #create-labels{text-align:center;align-items:center;overflow:hidden}
-#create-labels .ask-aura{position:absolute;z-index:0;width:62vw;height:62vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
+.ask-aura{position:absolute;z-index:0;width:62vw;height:62vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
 .ask-q{position:relative;z-index:1;font-weight:900;letter-spacing:-.03em;line-height:1.08;font-size:clamp(2.6rem,6.2vw,5rem);max-width:20ch;margin:0 auto}
 .ask-q .accentword{color:var(--accent);font-style:italic}
 
@@ -340,11 +340,14 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .gl-chips{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);display:flex;gap:clamp(.7rem,1.4vw,1.1rem);justify-content:center;flex-wrap:wrap;max-width:980px}
 .chip{background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:clamp(1.15rem,1.7vw,1.5rem);padding:.5em 1.1em;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
 #good-label .formula .f-word,#good-label .formula .f-op{font-size:clamp(1.4rem,2.9vw,2.4rem)}
-.gl-arrow{position:relative;z-index:1;margin-top:clamp(.7rem,1.8vh,1.2rem);display:flex;justify-content:center;color:var(--accent)}
-.gl-arrow svg{width:clamp(28px,3vw,40px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-#good-label.visible .gl-arrow{animation:bob 2.2s ease-in-out infinite}
+.gl-swoosh{position:relative;z-index:1;margin-top:clamp(.3rem,1vh,.7rem);display:flex;justify-content:center;transform:translateX(clamp(20px,4vw,70px))}
+.gl-swoosh svg{width:clamp(150px,17vw,220px);height:auto;overflow:visible}
+.gl-swoosh .sw-path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s cubic-bezier(.6,.04,.4,1) .5s}
+#good-label.visible .gl-swoosh .sw-path{stroke-dashoffset:0}
+.gl-swoosh .sw-head{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .3s ease 1.35s}
+#good-label.visible .gl-swoosh .sw-head{opacity:1}
 #good-label .gl-chips-lead{margin-top:clamp(.6rem,1.6vh,1rem)}
-@media (prefers-reduced-motion:reduce){#good-label.visible .gl-arrow{animation:none}}
+@media (prefers-reduced-motion:reduce){.gl-swoosh .sw-path{stroke-dashoffset:0}.gl-swoosh .sw-head{opacity:1}}
 </style>
 </head>
 <body>
@@ -703,8 +706,11 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     <span class="f-op">=</span>
     <span class="f-term"><span class="f-word"><span class="shimmer-text">A Good, Sticky Label</span></span></span>
   </div>
-  <div class="gl-arrow reveal" aria-hidden="true">
-    <svg viewBox="0 0 28 40"><path d="M14 4 V30"/><path d="M5 22 L14 32 L23 22"/></svg>
+  <div class="gl-swoosh reveal" aria-hidden="true">
+    <svg viewBox="0 0 200 96">
+      <path class="sw-path" pathLength="100" d="M178 8 C 188 48, 150 62, 112 66 C 92 68, 90 78, 92 90"/>
+      <path class="sw-head" d="M83 81 L92 92 L101 81"/>
+    </svg>
   </div>
   <div class="gl-chips-lead reveal">Labels worth earning</div>
   <div class="gl-chips stagger">
@@ -714,6 +720,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     <span class="chip">Ownership</span>
     <span class="chip">Good decision-making</span>
   </div>
+</section>
+
+<!-- 24 · The flattery question -->
+<section class="slide vcenter" id="flattery">
+  <div class="ask-aura" aria-hidden="true"></div>
+  <h2 class="ask-q reveal from-blur">So do I just keep <span class="accentword">ass-kissing</span> until I get a good performance review?</h2>
 </section>
 
 <script>
