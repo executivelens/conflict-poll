@@ -151,6 +151,22 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .perf.visible .perf-line{opacity:1;transform:none}
 .shimmer-text{background:linear-gradient(100deg,#0071e3 0%,#4da3ff 25%,#a9d6ff 50%,#4da3ff 75%,#0071e3 100%);background-size:200% 100%;background-repeat:repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
 
+/* ---- pages 12-13: welcome emerge -> title ---- */
+.welcome{align-items:center;text-align:center;overflow:hidden}
+.welcome-text{position:relative;z-index:1;font-weight:900;letter-spacing:-.03em;font-size:clamp(2.6rem,7vw,5.6rem);color:var(--text-primary);opacity:0;will-change:transform,opacity,filter}
+.welcome.visible .welcome-text{animation:emergeFade 5.5s ease-in-out infinite}
+@keyframes emergeFade{0%{opacity:0;transform:scale(.25);filter:blur(18px)}22%{opacity:1;transform:scale(1);filter:blur(0)}70%{opacity:1;transform:scale(1);filter:blur(0)}92%{opacity:0;transform:scale(1.22);filter:blur(7px)}100%{opacity:0;transform:scale(.25);filter:blur(18px)}}
+.emerge-title{align-items:center;text-align:center;overflow:hidden}
+.emerge-title .et-inner{position:relative;z-index:1;max-width:min(92vw,1400px);opacity:0;transform:scale(.3);filter:blur(16px);will-change:transform,opacity,filter}
+.emerge-title.visible .et-inner{animation:emergeIn 1.5s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes emergeIn{0%{opacity:0;transform:scale(.3);filter:blur(16px)}100%{opacity:1;transform:scale(1);filter:none}}
+.et-h1{color:var(--text-primary);font-size:clamp(2.6rem,6vw,5rem);line-height:1.06;letter-spacing:-.03em;font-weight:700}
+.et-sub{font-size:clamp(1.3rem,2.2vw,1.9rem);margin-top:clamp(1.4rem,3vh,2.2rem);color:var(--text-secondary)}
+.et-sub b{color:var(--text-primary)}
+.et-sub .by{display:block;font-size:.7em;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.45rem}
+.emerge-title .lasso-base{stroke-dashoffset:0}
+.emerge-title .lasso-orbit{opacity:1;animation:lassoOrbit 2.6s linear 1.4s infinite}
+
 /* ---- page 5: reaction / clap ---- */
 .react{align-items:center;text-align:center;overflow:hidden}
 .react .r-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
@@ -342,6 +358,19 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <div class="m-aura" aria-hidden="true"></div>
   <p class="perf-lead reveal">It's called a…</p>
   <h2 class="perf-line"><span class="shimmer-text">Performance</span> Review</h2>
+</section>
+
+<!-- 12 · Welcome to the class (emerge + fade loop) -->
+<section class="slide vcenter welcome" id="welcome">
+  <h2 class="welcome-text">Welcome to the class</h2>
+</section>
+
+<!-- 13 · Title emerges from the same spot (same content as page 1) -->
+<section class="slide vcenter emerge-title" id="welcome-title">
+  <div class="et-inner">
+    <h1 class="et-h1">Breakthrough Executive Presence for <span class="circle-word">Non-Native Speakers<svg class="circle-mark" viewBox="0 0 400 130" preserveAspectRatio="none" aria-hidden="true"><path class="lasso-base" d="M 364 32 C 286 4, 78 6, 22 34 C -22 60, -4 104, 92 118 C 240 134, 380 118, 392 80 C 402 48, 386 38, 364 32"/><path class="lasso-orbit" pathLength="100" d="M 364 32 C 286 4, 78 6, 22 34 C -22 60, -4 104, 92 118 C 240 134, 380 118, 392 80 C 402 48, 386 38, 364 32"/></svg></span></h1>
+    <p class="et-sub"><span class="by">Instructed by</span><b>Mike Li</b> &amp; <b>Amanda Tobin</b></p>
+  </div>
 </section>
 
 <script>
