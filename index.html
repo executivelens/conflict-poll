@@ -330,6 +330,15 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .dcard p{font-size:clamp(1rem,1.35vw,1.2rem);color:var(--text-primary);font-weight:600;line-height:1.3}
 .dcard p.ex{color:var(--text-secondary);font-weight:500}
 .dcard .dur{margin-top:.35rem;background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:clamp(.85rem,1.15vw,1.02rem);padding:.3em .85em;border-radius:999px}
+
+/* page 23: the good-label formula */
+#good-label{text-align:center;align-items:center;overflow:hidden}
+#good-label .eyebrow{width:100%;justify-content:center;text-align:center}
+#good-label .formula{margin-top:clamp(1rem,2.4vh,1.8rem)}
+.gl-intro{position:relative;z-index:1;font-size:clamp(1.3rem,2vw,1.7rem);color:var(--text-secondary);font-weight:600;max-width:44ch;margin:0 auto}
+.gl-chips-lead{position:relative;z-index:1;margin-top:clamp(1.8rem,4vh,2.8rem);font-size:clamp(1.05rem,1.5vw,1.3rem);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.gl-chips{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);display:flex;gap:clamp(.7rem,1.4vw,1.1rem);justify-content:center;flex-wrap:wrap;max-width:980px}
+.chip{background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:clamp(1.15rem,1.7vw,1.5rem);padding:.5em 1.1em;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
 </style>
 </head>
 <body>
@@ -675,6 +684,26 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
       <p class="ex">A relationship or experience.</p>
       <span class="dur">timeless</span>
     </div>
+  </div>
+</section>
+
+<!-- 23 · The good-label formula -->
+<section class="slide vcenter" id="good-label">
+  <span class="eyebrow reveal">Engineering a good label</span>
+  <p class="gl-intro reveal">Based on how memories form, the recipe is simple:</p>
+  <div class="formula reveal">
+    <span class="f-term"><span class="f-word">Good Label</span></span>
+    <span class="f-op">=</span>
+    <span class="f-term"><span class="f-word f-accent">Positive Emotions</span><span class="f-cap">(the deepest level)</span></span>
+    <span class="f-op">×</span>
+    <span class="f-term"><span class="f-word f-accent">Spaced Repetition</span><span class="f-cap">(make it stick)</span></span>
+  </div>
+  <div class="gl-chips-lead reveal">Labels worth earning</div>
+  <div class="gl-chips stagger">
+    <span class="chip">Reliable</span>
+    <span class="chip">Trustworthy leadership</span>
+    <span class="chip">Ownership</span>
+    <span class="chip">Entrepreneurship</span>
   </div>
 </section>
 
