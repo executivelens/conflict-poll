@@ -85,8 +85,9 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .divider .w{display:inline-block;opacity:0;transform:translateY(28px) scale(.68);filter:blur(8px);transition:opacity .55s cubic-bezier(.34,1.56,.64,1) var(--d,0s),transform .68s cubic-bezier(.34,1.56,.64,1) var(--d,0s),filter .5s ease var(--d,0s);will-change:transform,opacity}
 .divider.visible .w{opacity:1;transform:none;filter:none}
 .wu-accent{position:relative;display:inline-block;color:var(--text-primary);transform-origin:center}
-.wu-accent .hl{position:absolute;left:-.26em;right:-.3em;top:.02em;bottom:-.06em;z-index:-1;border-radius:.5em;background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 44%,#fff),color-mix(in srgb,var(--accent) 26%,#fff));transform:scaleX(0) rotate(-1.4deg);transform-origin:left center;transition:transform .7s cubic-bezier(.16,1,.3,1) .75s;box-shadow:0 12px 38px rgba(0,113,227,.22)}
-.divider.visible .wu-accent .hl{transform:scaleX(1) rotate(-1.4deg);animation:hlGlow 3s ease-in-out 1.7s infinite}
+.wu-hl-wrap{position:relative;display:inline-block}
+.wu-accent .hl{position:absolute;left:-.2em;right:-.2em;top:.02em;bottom:-.06em;z-index:-1;border-radius:.34em;background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 44%,#fff),color-mix(in srgb,var(--accent) 26%,#fff));transform:scaleX(0);transform-origin:left center;transition:transform .7s cubic-bezier(.16,1,.3,1) .75s;box-shadow:0 12px 38px rgba(0,113,227,.22)}
+.divider.visible .wu-accent .hl{transform:scaleX(1);animation:hlGlow 3s ease-in-out 1.7s infinite}
 @keyframes hlGlow{0%,100%{box-shadow:0 10px 34px rgba(0,113,227,.20)}50%{box-shadow:0 14px 50px rgba(0,113,227,.46)}}
 .divider.visible .wu-accent{animation:wuWiggle 1.5s ease-in-out 2s infinite}
 @keyframes wuWiggle{0%,100%{transform:rotate(-2.8deg)}50%{transform:rotate(2.8deg)}}
@@ -232,10 +233,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     </span>
     <span class="line">
       <span class="w" style="--d:.30s">let's</span>
-      <span class="wu-accent">
-        <span class="hl" aria-hidden="true"></span>
-        <span class="w" style="--d:.40s">warm</span> <span class="w" style="--d:.48s">up</span>
-      </span><span class="w" style="--d:.54s">!</span>
+      <span class="wu-accent"><span class="wu-hl-wrap"><span class="hl" aria-hidden="true"></span><span class="w" style="--d:.40s">warm</span> <span class="w" style="--d:.48s">up</span></span><span class="w" style="--d:.54s">!</span></span>
     </span>
   </h2>
   <div class="warmup-cue reveal" aria-hidden="true">
