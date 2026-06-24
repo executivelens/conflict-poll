@@ -339,6 +339,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .gl-chips-lead{position:relative;z-index:1;margin-top:clamp(1.8rem,4vh,2.8rem);font-size:clamp(1.05rem,1.5vw,1.3rem);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
 .gl-chips{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);display:flex;gap:clamp(.7rem,1.4vw,1.1rem);justify-content:center;flex-wrap:wrap;max-width:980px}
 .chip{background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:clamp(1.15rem,1.7vw,1.5rem);padding:.5em 1.1em;border-radius:999px;border:1px solid color-mix(in srgb,var(--accent) 22%,transparent)}
+#good-label .formula .f-word,#good-label .formula .f-op{font-size:clamp(1.4rem,2.9vw,2.4rem)}
+.gl-arrow{position:relative;z-index:1;margin-top:clamp(.7rem,1.8vh,1.2rem);display:flex;justify-content:center;color:var(--accent)}
+.gl-arrow svg{width:clamp(28px,3vw,40px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#good-label.visible .gl-arrow{animation:bob 2.2s ease-in-out infinite}
+#good-label .gl-chips-lead{margin-top:clamp(.6rem,1.6vh,1rem)}
+@media (prefers-reduced-motion:reduce){#good-label.visible .gl-arrow{animation:none}}
 </style>
 </head>
 <body>
@@ -690,20 +696,24 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 23 · The good-label formula -->
 <section class="slide vcenter" id="good-label">
   <span class="eyebrow reveal">Engineering a good label</span>
-  <p class="gl-intro reveal">Based on how memories form, the recipe is simple:</p>
-  <div class="formula reveal">
-    <span class="f-term"><span class="f-word">Good Label</span></span>
-    <span class="f-op">=</span>
-    <span class="f-term"><span class="f-word f-accent">Positive Emotions</span><span class="f-cap">(the deepest level)</span></span>
+  <div class="formula glf reveal">
+    <span class="f-term"><span class="f-word f-accent">Positive Emotions</span><span class="f-cap">(the deepest level of memory)</span></span>
     <span class="f-op">×</span>
-    <span class="f-term"><span class="f-word f-accent">Spaced Repetition</span><span class="f-cap">(make it stick)</span></span>
+    <span class="f-term"><span class="f-word f-accent">Spaced Repetition</span><span class="f-cap">(trigger it again and again)</span></span>
+    <span class="f-op">=</span>
+    <span class="f-term"><span class="f-word"><span class="shimmer-text">A Good, Sticky Label</span></span></span>
+  </div>
+  <div class="gl-arrow reveal" aria-hidden="true">
+    <svg viewBox="0 0 28 40"><path d="M14 4 V30"/><path d="M5 22 L14 32 L23 22"/></svg>
   </div>
   <div class="gl-chips-lead reveal">Labels worth earning</div>
   <div class="gl-chips stagger">
     <span class="chip">Reliable</span>
-    <span class="chip">Trustworthy leadership</span>
+    <span class="chip">Trustworthy</span>
+    <span class="chip">Leadership</span>
     <span class="chip">Ownership</span>
-    <span class="chip">Entrepreneurship</span>
+    <span class="chip">Good decision-making</span>
+    <span class="chip">Backbone</span>
   </div>
 </section>
 
