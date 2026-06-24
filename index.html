@@ -278,6 +278,26 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .lbl-lead .accentword{color:var(--accent);font-style:italic;font-weight:700}
 .lbl-hero{position:relative;z-index:1;margin-top:clamp(1.8rem,4vh,3rem);font-weight:900;letter-spacing:-.03em;line-height:1.08;font-size:clamp(3rem,7.2vw,5.6rem);color:var(--text-primary);max-width:18ch;margin-left:auto;margin-right:auto;opacity:0;transform:scale(.8);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .7s cubic-bezier(.34,1.56,.64,1) .15s}
 #labeling.visible .lbl-hero{opacity:1;transform:none}
+
+/* page 19: how a label forms (CMH in action) */
+#how-label{overflow:hidden}
+#how-label .eyebrow{width:100%;justify-content:center;text-align:center}
+.mech-title{text-align:center;font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;margin:0 auto}
+.mech-title .accentword{color:var(--accent);font-style:italic}
+.mech-flow{margin-top:clamp(1.6rem,3.4vh,2.4rem);display:flex;align-items:stretch;justify-content:center;gap:clamp(.6rem,1.3vw,1.1rem);flex-wrap:wrap}
+.mech-card{flex:1 1 0;min-width:240px;max-width:340px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(1.3rem,2.1vw,1.9rem) clamp(1.2rem,1.8vw,1.6rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.7rem}
+.mech-head{display:flex;align-items:center;gap:.75rem}
+.mech-badge{width:clamp(46px,4vw,58px);height:clamp(46px,4vw,58px);border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:900;font-size:clamp(1.4rem,2vw,1.8rem);display:grid;place-items:center;flex:0 0 auto;box-shadow:0 10px 24px rgba(0,113,227,.26)}
+.mech-card h3{font-size:clamp(1.3rem,1.9vw,1.6rem);font-weight:800;letter-spacing:-.01em;line-height:1.08}
+.mech-card p{font-size:clamp(1.05rem,1.45vw,1.28rem);color:var(--text-secondary);line-height:1.4}
+.mech-card p b{color:var(--text-primary);font-weight:700}
+.mech-stat{color:var(--accent);font-weight:900}
+.mech-arrow{display:grid;place-items:center;flex:0 0 auto;color:var(--accent)}
+.mech-arrow svg{width:clamp(24px,2.4vw,34px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.mech-pay{margin-top:clamp(1.4rem,3.2vh,2.2rem);text-align:center;font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;color:var(--text-primary);max-width:54ch;margin-left:auto;margin-right:auto;line-height:1.35}
+.mech-pay .big{color:var(--accent);font-weight:900}
+.mech-pay .muted{color:var(--text-secondary);font-weight:600}
+@media (max-width:900px){.mech-arrow{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -528,6 +548,29 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <div class="lbl-aura" aria-hidden="true"></div>
   <p class="lbl-lead reveal">A great example of how these three blocks work <b>for you</b> — or <b>against you</b> — is the <span class="accentword">Labeling Effect</span>.</p>
   <h2 class="lbl-hero">You are <span class="shimmer-text">3–5 labels</span> in people's minds.</h2>
+</section>
+
+<!-- 19 · How a label forms (CMH in action) -->
+<section class="slide vcenter" id="how-label">
+  <span class="eyebrow reveal">The CMH framework · in action</span>
+  <h2 class="mech-title reveal">How your brain turns a person into a <span class="accentword">label</span></h2>
+  <div class="mech-flow stagger">
+    <div class="mech-card">
+      <div class="mech-head"><span class="mech-badge">C</span><h3>Conserve energy</h3></div>
+      <p>Your brain burns <span class="mech-stat">~20%</span> of your energy. Survival means spending as little of it as possible.</p>
+    </div>
+    <div class="mech-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h13M12 6l6 6-6 6"/></svg></div>
+    <div class="mech-card">
+      <div class="mech-head"><span class="mech-badge">H</span><h3>Danger signal</h3></div>
+      <p>Heavy mental effort is expensive — so a <b>stress hormone</b> fires to flag it as a threat.</p>
+    </div>
+    <div class="mech-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h13M12 6l6 6-6 6"/></svg></div>
+    <div class="mech-card">
+      <div class="mech-head"><span class="mech-badge">M</span><h3>Compress to a word</h3></div>
+      <p>So your brain squeezes a person into <b>one word</b>. Repeat the pattern, and that label sticks.</p>
+    </div>
+  </div>
+  <p class="mech-pay reveal">Ten labels would blow the budget — so only the <span class="big">3–5 most obvious</span> survive. <span class="muted">That's who you are in their mind.</span></p>
 </section>
 
 <script>
