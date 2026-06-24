@@ -269,6 +269,15 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .cme-card h3{font-size:clamp(1.5rem,2.2vw,1.95rem);font-weight:800;letter-spacing:-.01em}
 .cme-card p{font-size:clamp(1.15rem,1.6vw,1.4rem);color:var(--text-secondary);line-height:1.4}
 .cme-card p b{color:var(--text-primary);font-weight:800}
+
+/* page 18: the labeling effect (bold statement) */
+#labeling{text-align:center;align-items:center;overflow:hidden}
+#labeling .lbl-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 14%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
+.lbl-lead{position:relative;z-index:1;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;color:var(--text-secondary);max-width:40ch;margin:0 auto;line-height:1.4}
+.lbl-lead b{color:var(--text-primary);font-weight:800}
+.lbl-lead .accentword{color:var(--accent);font-style:italic;font-weight:700}
+.lbl-hero{position:relative;z-index:1;margin-top:clamp(1.8rem,4vh,3rem);font-weight:900;letter-spacing:-.03em;line-height:1.08;font-size:clamp(3rem,7.2vw,5.6rem);color:var(--text-primary);max-width:18ch;margin-left:auto;margin-right:auto;opacity:0;transform:scale(.8);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .15s,transform .7s cubic-bezier(.34,1.56,.64,1) .15s}
+#labeling.visible .lbl-hero{opacity:1;transform:none}
 </style>
 </head>
 <body>
@@ -512,6 +521,13 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
       <p>Hormones affect emotions, and <b>emotions shape how we interact with surroundings</b>.</p>
     </div>
   </div>
+</section>
+
+<!-- 18 · The labeling effect (bold statement) -->
+<section class="slide vcenter" id="labeling">
+  <div class="lbl-aura" aria-hidden="true"></div>
+  <p class="lbl-lead reveal">A great example of how these three blocks work <b>for you</b> — or <b>against you</b> — is the <span class="accentword">Labeling Effect</span>.</p>
+  <h2 class="lbl-hero">You are <span class="shimmer-text">3–5 labels</span> in people's minds.</h2>
 </section>
 
 <script>
