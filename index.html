@@ -160,6 +160,9 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .mcard .mnum{display:inline-flex;align-items:center;justify-content:center;width:1.65em;height:1.65em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:.82em;margin-right:.55em;flex:0 0 auto}
 .mcard .mcap{font-size:clamp(1.05rem,1.5vw,1.3rem);font-weight:600;color:var(--text-secondary);line-height:1.45}
 .mcard .mcap b{color:var(--text-primary);font-weight:800}
+.mcard .mlist{list-style:none;margin-top:.55rem;display:flex;flex-direction:column;gap:.4rem}
+.mcard .mlist li{position:relative;padding-left:1.25em;font-size:clamp(1.02rem,1.45vw,1.25rem);font-weight:600;color:var(--text-primary);line-height:1.3}
+.mcard .mlist li::before{content:"";position:absolute;left:0;top:.5em;width:.5em;height:.5em;border-radius:50%;background:var(--accent)}
 .mrow{display:flex;gap:.7em;font-size:clamp(.98rem,1.35vw,1.18rem);line-height:1.3;margin-top:.35rem}
 .mrow .who{flex:0 0 4.4em;font-weight:800}
 .mrow.magic .who{color:var(--accent)}
@@ -269,6 +272,31 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
       <div class="mcard">
         <h3><span class="mnum">2</span>The performance</h3>
         <div class="mcap"><b>What wows people</b> — the framing, the attention, the word choice, the venue &amp; the audience.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · Sound familiar? (the career parallel) -->
+<section class="slide vcenter mshow" id="soundfamiliar">
+  <h2 class="mshow-title reveal">Sound <span class="accentword">familiar</span>?</h2>
+  <div class="mshow-body">
+    <div class="mshow-art">
+      <img class="ny-img" src="presentation-cartoon.png" alt="Cartoon: a nervous presenter sweating at a podium under a spotlight, with a 'TOPIC: PRODUCT PRESENTATION' easel, a 'PRESENTATION TONIGHT' sign, anxious crew in the wings, and a watching audience.">
+    </div>
+    <div class="mshow-map reveal from-right">
+      <div class="mcard">
+        <h3><span class="mnum">1</span>Expertise</h3>
+        <div class="mcap"><b>The core</b> — your subject-matter expertise, your domain knowledge.</div>
+      </div>
+      <div class="mcard">
+        <h3><span class="mnum">2</span>The performance</h3>
+        <div class="mcap"><b>What wows people</b></div>
+        <ul class="mlist">
+          <li>the framing</li>
+          <li>the word choice</li>
+          <li>how you influence the audience</li>
+        </ul>
       </div>
     </div>
   </div>
