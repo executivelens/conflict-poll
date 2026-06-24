@@ -310,6 +310,26 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 #create-labels .ask-aura{position:absolute;z-index:0;width:62vw;height:62vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
 .ask-q{position:relative;z-index:1;font-weight:900;letter-spacing:-.03em;line-height:1.08;font-size:clamp(2.6rem,6.2vw,5rem);max-width:20ch;margin:0 auto}
 .ask-q .accentword{color:var(--accent);font-style:italic}
+
+/* page 22: the label formula + memory-depth ladder */
+#label-formula{text-align:center;align-items:center;overflow:hidden}
+#label-formula .eyebrow{width:100%;justify-content:center;text-align:center}
+.formula{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:center;flex-wrap:wrap;gap:clamp(.5rem,1.4vw,1.1rem);margin:clamp(.3rem,1vh,.7rem) auto 0}
+.formula .f-term{display:flex;flex-direction:column;align-items:center}
+.formula .f-word{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:900;letter-spacing:-.02em;line-height:1}
+.formula .f-op{font-size:clamp(1.8rem,3.6vw,3rem);font-weight:800;color:var(--text-secondary);line-height:1;align-self:flex-start}
+.formula .f-accent{color:var(--accent)}
+.f-cap{margin-top:.4rem;font-size:clamp(.85rem,1.2vw,1.05rem);font-weight:700;color:var(--text-secondary)}
+.depth-lead{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2.1rem);font-size:clamp(1.05rem,1.5vw,1.3rem);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.depth-grid{margin-top:clamp(1rem,2.4vh,1.6rem);display:flex;gap:clamp(.8rem,1.6vw,1.3rem);justify-content:center;flex-wrap:wrap;width:100%;max-width:1180px}
+.dcard{flex:1 1 0;min-width:210px;max-width:290px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:clamp(1.1rem,1.8vw,1.5rem) clamp(1rem,1.5vw,1.3rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.42rem}
+.dcard .meter{display:flex;gap:.28rem;margin-bottom:.35rem}
+.dcard .meter i{width:.72rem;height:1.45rem;border-radius:4px;background:var(--accent-dim)}
+.dcard .meter i.on{background:var(--accent)}
+.dcard h3{font-size:clamp(1.3rem,1.85vw,1.6rem);font-weight:800;letter-spacing:-.01em;line-height:1.05}
+.dcard p{font-size:clamp(1rem,1.35vw,1.2rem);color:var(--text-primary);font-weight:600;line-height:1.3}
+.dcard p.ex{color:var(--text-secondary);font-weight:500}
+.dcard .dur{margin-top:.35rem;background:var(--accent-dim);color:var(--accent);font-weight:800;font-size:clamp(.85rem,1.15vw,1.02rem);padding:.3em .85em;border-radius:999px}
 </style>
 </head>
 <body>
@@ -613,6 +633,49 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <section class="slide vcenter" id="create-labels">
   <div class="ask-aura" aria-hidden="true"></div>
   <h2 class="ask-q reveal from-blur">So how do I <span class="accentword">create the labels</span> I want people to see me as?</h2>
+</section>
+
+<!-- 22 · The label formula + memory-depth ladder -->
+<section class="slide vcenter" id="label-formula">
+  <span class="eyebrow reveal">The label formula</span>
+  <div class="formula reveal">
+    <span class="f-term"><span class="f-word">Label</span></span>
+    <span class="f-op">=</span>
+    <span class="f-term"><span class="f-word f-accent">Key Memory</span><span class="f-cap">(make it deep)</span></span>
+    <span class="f-op">×</span>
+    <span class="f-term"><span class="f-word f-accent">Spaced Repetition</span><span class="f-cap">(make it stick)</span></span>
+  </div>
+  <div class="depth-lead reveal">Four levels of memory depth</div>
+  <div class="depth-grid stagger">
+    <div class="dcard">
+      <div class="meter"><i class="on"></i><i></i><i></i><i></i></div>
+      <h3>Sensory</h3>
+      <p>You just saw or heard it.</p>
+      <p class="ex">A stranger on the street.</p>
+      <span class="dur">gone in a minute</span>
+    </div>
+    <div class="dcard">
+      <div class="meter"><i class="on"></i><i class="on"></i><i></i><i></i></div>
+      <h3>Meaning</h3>
+      <p>It means something to you.</p>
+      <p class="ex">A reminder to pay rent.</p>
+      <span class="dur">lasts days</span>
+    </div>
+    <div class="dcard">
+      <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      <h3>Drama</h3>
+      <p>Big sights or sounds hit hard.</p>
+      <p class="ex">A movie, song, anime or game.</p>
+      <span class="dur">lasts years</span>
+    </div>
+    <div class="dcard">
+      <div class="meter"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      <h3>Emotion</h3>
+      <p>It stirs real feeling — good or bad.</p>
+      <p class="ex">A relationship or experience.</p>
+      <span class="dur">timeless</span>
+    </div>
+  </div>
 </section>
 
 <script>
