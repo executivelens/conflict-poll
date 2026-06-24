@@ -141,6 +141,16 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .quote-attr{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:700;color:var(--text-secondary)}
 .quote-attr b{color:var(--text-primary)}
 
+/* ---- pages 10-11: performance review reveal ---- */
+.rejected{align-items:center;text-align:center;overflow:hidden}
+.rej-lead{position:relative;z-index:1;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:var(--text-secondary)}
+.rej-words{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);display:flex;flex-direction:column;gap:clamp(.9rem,2.2vh,1.5rem)}
+.rej{font-weight:800;letter-spacing:-.02em;font-size:clamp(2.2rem,5.2vw,4.2rem);color:var(--text-secondary);text-decoration:line-through;text-decoration-thickness:.055em;text-decoration-color:var(--accent)}
+.perf-lead{position:relative;z-index:1;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:var(--text-secondary)}
+.perf-line{position:relative;z-index:1;margin-top:clamp(1rem,2.4vh,1.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.1;font-size:clamp(2.8rem,7.2vw,5.8rem);color:var(--text-primary);opacity:0;transform:scale(.8);transition:opacity .6s cubic-bezier(.34,1.56,.64,1) .12s,transform .7s cubic-bezier(.34,1.56,.64,1) .12s}
+.perf.visible .perf-line{opacity:1;transform:none}
+.shimmer-text{background:linear-gradient(100deg,#0071e3 0%,#4da3ff 25%,#a9d6ff 50%,#4da3ff 75%,#0071e3 100%);background-size:200% 100%;background-repeat:repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+
 /* ---- page 5: reaction / clap ---- */
 .react{align-items:center;text-align:center;overflow:hidden}
 .react .r-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
@@ -316,6 +326,22 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <div class="m-aura" aria-hidden="true"></div>
   <h2 class="magic-hero quotehero">&ldquo;The real secret of magic lies in the performance.&rdquo;</h2>
   <p class="quote-attr reveal">— <b>David Copperfield</b></p>
+</section>
+
+<!-- 10 · Not Effectiveness / Efficiency -->
+<section class="slide vcenter rejected" id="not-review">
+  <p class="rej-lead reveal">Your annual review isn't an…</p>
+  <div class="rej-words stagger">
+    <span class="rej">Effectiveness Review</span>
+    <span class="rej">Efficiency Review</span>
+  </div>
+</section>
+
+<!-- 11 · Performance Review reveal -->
+<section class="slide vcenter magic perf" id="perf-review">
+  <div class="m-aura" aria-hidden="true"></div>
+  <p class="perf-lead reveal">It's called a…</p>
+  <h2 class="perf-line"><span class="shimmer-text">Performance</span> Review</h2>
 </section>
 
 <script>
