@@ -349,21 +349,25 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 #good-label .gl-chips-lead{margin-top:clamp(.6rem,1.6vh,1rem)}
 @media (prefers-reduced-motion:reduce){.gl-swoosh .sw-path{stroke-dashoffset:0}.gl-swoosh .sw-head{opacity:1}}
 
-/* page 25: why flattery fails (approval flows down) */
+/* page 25: why flattery fails (two mirrored flow charts) */
 #why-flattery{text-align:center;align-items:center;overflow:hidden}
 #why-flattery .eyebrow{width:100%;justify-content:center;text-align:center}
-.wf-title{position:relative;z-index:1;font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:24ch;margin:0 auto}
-.wf-title .accentword{color:var(--accent);font-style:italic}
-.wf-ladder{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2rem);display:flex;flex-direction:column;align-items:center;width:100%;max-width:600px}
-.wf-tier{width:100%;background:#fff;border:1px solid var(--border);border-radius:14px;padding:clamp(.75rem,1.5vw,1.1rem) clamp(1rem,2vw,1.5rem);box-shadow:0 10px 26px rgba(0,0,0,.05);font-size:clamp(1.2rem,1.85vw,1.55rem);font-weight:700}
-.wf-tier.wf-you{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 14px 34px rgba(0,113,227,.28)}
-.wf-down{display:flex;align-items:center;justify-content:center;gap:.55rem;padding:clamp(.35rem,.9vh,.65rem) 0;color:var(--accent);font-weight:700;font-size:clamp(1rem,1.4vw,1.22rem)}
-.wf-down svg{width:clamp(18px,1.8vw,24px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
-.wf-note{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2rem);display:flex;align-items:flex-start;justify-content:center;gap:.7rem;max-width:56ch;margin-left:auto;margin-right:auto}
-.wf-note .up{flex:0 0 auto;color:var(--text-secondary);margin-top:.15rem}
-.wf-note .up svg{width:clamp(20px,2vw,26px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.wf-note p{text-align:left;font-size:clamp(1.12rem,1.6vw,1.4rem);color:var(--text-secondary);line-height:1.4}
+.wf-title{position:relative;z-index:1;font-size:clamp(1.7rem,3.2vw,2.55rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;max-width:30ch;margin:0 auto}
+.wf-charts{position:relative;z-index:1;margin-top:clamp(1.1rem,2.6vh,1.9rem);display:flex;gap:clamp(1.4rem,4vw,3.4rem);justify-content:center;align-items:flex-start;flex-wrap:wrap;width:100%}
+.wf-chart{flex:1 1 0;min-width:280px;max-width:430px;display:flex;flex-direction:column;align-items:center}
+.wf-chart-head{font-size:clamp(1rem,1.35vw,1.2rem);font-weight:800;letter-spacing:.04em;text-transform:uppercase;margin-bottom:clamp(.7rem,1.6vh,1.1rem)}
+.wf-chart.good .wf-chart-head,.wf-chart.good .wf-conn,.wf-chart.good .wf-result{color:var(--accent)}
+.wf-chart.bad .wf-chart-head,.wf-chart.bad .wf-conn,.wf-chart.bad .wf-result{color:var(--text-secondary)}
+.wf-ladder{display:flex;flex-direction:column;align-items:center;width:100%}
+.wf-tier{width:100%;background:#fff;border:1px solid var(--border);border-radius:14px;padding:clamp(.7rem,1.4vw,1rem) clamp(.9rem,1.6vw,1.3rem);box-shadow:0 10px 26px rgba(0,0,0,.05);font-size:clamp(1.08rem,1.55vw,1.4rem);font-weight:700;line-height:1.15}
+.wf-conn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:clamp(.28rem,.7vh,.55rem) 0;font-weight:700;font-size:clamp(.95rem,1.3vw,1.15rem)}
+.wf-conn svg{width:clamp(17px,1.7vw,22px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.wf-result{margin-top:clamp(.6rem,1.4vh,1rem);font-weight:800;font-size:clamp(1rem,1.4vw,1.22rem)}
+.wf-note{position:relative;z-index:1;margin-top:clamp(1.2rem,2.8vh,1.9rem);max-width:64ch;margin-left:auto;margin-right:auto}
+.wf-note p{font-size:clamp(1.06rem,1.45vw,1.3rem);color:var(--text-secondary);line-height:1.4}
 .wf-note p b{color:var(--text-primary);font-weight:800}
+.wf-note .caveat{margin-top:.65rem;font-size:clamp(1rem,1.32vw,1.16rem)}
+.wf-note .caveat b{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -744,20 +748,37 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <h2 class="ask-q reveal from-blur">So do I just keep <span class="accentword">ass-kissing</span> until I get a good performance review?</h2>
 </section>
 
-<!-- 25 · Why flattery fails: approval flows down, not up -->
+<!-- 25 · Why flattery fails: two mirrored flow charts -->
 <section class="slide vcenter" id="why-flattery">
   <span class="eyebrow reveal">Why flattery fails</span>
-  <h2 class="wf-title reveal">Approval flows <span class="accentword">down</span> — not up.</h2>
-  <div class="wf-ladder reveal">
-    <div class="wf-tier">Their boss, peers &amp; leadership</div>
-    <div class="wf-down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg>approval &amp; validation</div>
-    <div class="wf-tier">Your boss</div>
-    <div class="wf-down"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg>approval &amp; validation</div>
-    <div class="wf-tier wf-you">You</div>
+  <h2 class="wf-title reveal">What really happens when you compliment your boss</h2>
+  <div class="wf-charts reveal">
+    <div class="wf-chart good">
+      <div class="wf-chart-head">How emotion gets triggered</div>
+      <div class="wf-ladder">
+        <div class="wf-tier">Their boss, peers &amp; leadership</div>
+        <div class="wf-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg>approval &amp; validation</div>
+        <div class="wf-tier">Your boss</div>
+        <div class="wf-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg>approval &amp; validation</div>
+        <div class="wf-tier">You</div>
+      </div>
+      <div class="wf-result">→ triggers positive emotion</div>
+    </div>
+    <div class="wf-chart bad">
+      <div class="wf-chart-head">What complimenting up does</div>
+      <div class="wf-ladder">
+        <div class="wf-tier">Their boss, peers &amp; leadership</div>
+        <div class="wf-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20 V4 M6 10 L12 3 L18 10"/></svg>compliments</div>
+        <div class="wf-tier">Your boss</div>
+        <div class="wf-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20 V4 M6 10 L12 3 L18 10"/></svg>compliments</div>
+        <div class="wf-tier">You</div>
+      </div>
+      <div class="wf-result">→ reads as obsequiousness</div>
+    </div>
   </div>
   <div class="wf-note reveal">
-    <span class="up"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20 V4 M6 10 L12 3 L18 10"/></svg></span>
-    <p>Complimenting <b>up</b> just signals obedience — read as insincere (gone in minutes) or "you want something." It rarely triggers your boss's emotions.</p>
+    <p><b>Complimenting up signals obsequiousness</b> most of the time — or reads as insincere, or "you want something." It rarely triggers your boss's emotion, and it's gone in minutes.</p>
+    <p class="caveat">It <b>can</b> work if your boss is extremely insecure (not uncommon) — but that good feeling gets overwritten in minutes the moment you make them look bad in front of their leadership.</p>
   </div>
 </section>
 
