@@ -180,6 +180,18 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .emerge-title .lasso-base{stroke-dashoffset:0}
 .emerge-title .lasso-orbit{opacity:1;animation:lassoOrbit 2.6s linear 1.4s infinite}
 
+/* ---- page 13: the hidden meeting (perf review strategy) ---- */
+.hidden-meeting{align-items:center;text-align:center;overflow:hidden}
+.hm-title{position:relative;z-index:1;font-weight:800;letter-spacing:-.02em;line-height:1.14;font-size:clamp(1.8rem,3.6vw,2.85rem);max-width:24ch;margin:0 auto}
+.hm-title .accentword{color:var(--accent);font-style:italic}
+.hm-title .strong{font-weight:900}
+.hm-sub{max-width:44ch;margin:clamp(.8rem,1.8vh,1.3rem) auto 0;font-size:clamp(1.1rem,1.7vw,1.4rem);color:var(--text-secondary);line-height:1.4}
+.hm-label{margin-top:clamp(1.5rem,3.2vh,2.3rem);font-size:clamp(.95rem,1.3vw,1.15rem);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.hm-strategy{margin-top:clamp(.9rem,2vh,1.3rem);display:flex;flex-direction:column;gap:clamp(.8rem,1.8vh,1.2rem);max-width:780px;width:100%}
+.hm-step{display:flex;align-items:center;gap:1rem;background:#fff;border:1px solid var(--border);border-radius:14px;padding:clamp(.85rem,1.6vw,1.25rem) clamp(1.1rem,2vw,1.6rem);box-shadow:0 10px 28px rgba(0,0,0,.05);font-size:clamp(1.1rem,1.6vw,1.4rem);font-weight:600;line-height:1.35;text-align:left}
+.hm-num{flex:0 0 auto;width:1.9em;height:1.9em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9em}
+.hm-step b{color:var(--accent)}
+
 /* ---- page 5: reaction / clap ---- */
 .react{align-items:center;text-align:center;overflow:hidden}
 .react .r-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
@@ -371,6 +383,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <div class="et-inner">
     <h1 class="et-h1">Breakthrough Promotions for <span class="circle-word">Non-Native Speakers<svg class="circle-mark" viewBox="0 0 400 130" preserveAspectRatio="none" aria-hidden="true"><path class="lasso-base" d="M 364 32 C 286 4, 78 6, 22 34 C -22 60, -4 104, 92 118 C 240 134, 380 118, 392 80 C 402 48, 386 38, 364 32"/><path class="lasso-orbit" pathLength="100" d="M 364 32 C 286 4, 78 6, 22 34 C -22 60, -4 104, 92 118 C 240 134, 380 118, 392 80 C 402 48, 386 38, 364 32"/></svg></span></h1>
     <p class="et-sub"><span class="by">Instructed by</span><b>Mike Li</b> &amp; <b>Amanda Tobin</b></p>
+  </div>
+</section>
+
+<!-- 13 · The hidden meeting (performance review strategy) -->
+<section class="slide vcenter hidden-meeting" id="hidden-meeting">
+  <h2 class="hm-title reveal">The most important meeting of your career is your <span class="accentword">performance review</span> — and you'll <span class="strong">never be in it</span>.</h2>
+  <p class="hm-sub reveal">It's where they discuss your performance and decide your future. Without you in the room.</p>
+  <div class="hm-label reveal">So here's the strategy</div>
+  <div class="hm-strategy stagger">
+    <div class="hm-step"><span class="hm-num">1</span><span>Know <b>who's going to be in</b> your performance review.</span></div>
+    <div class="hm-step"><span class="hm-num">2</span><span><b>Influence them</b> to speak positively about you in that meeting.</span></div>
   </div>
 </section>
 
