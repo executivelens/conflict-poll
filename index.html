@@ -136,6 +136,11 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .magic-cta .play svg{width:100%;height:100%}
 @keyframes ctaPulse{0%,100%{transform:scale(1);box-shadow:0 14px 40px rgba(0,113,227,.3)}50%{transform:scale(1.045);box-shadow:0 20px 56px rgba(0,113,227,.46)}}
 
+/* ---- page 9: quote (same gradient-shimmer hero as Moment of truth) ---- */
+.magic-hero.quotehero{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:18ch;margin:0 auto;line-height:1.14}
+.quote-attr{position:relative;z-index:1;margin-top:clamp(1.6rem,3.5vh,2.6rem);font-size:clamp(1.2rem,2vw,1.7rem);font-weight:700;color:var(--text-secondary)}
+.quote-attr b{color:var(--text-primary)}
+
 /* ---- page 5: reaction / clap ---- */
 .react{align-items:center;text-align:center;overflow:hidden}
 .react .r-aura{position:absolute;z-index:0;width:60vw;height:60vw;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 66%);filter:blur(48px);pointer-events:none;animation:wuDrift1 10s ease-in-out infinite}
@@ -304,6 +309,13 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
       </div>
     </div>
   </div>
+</section>
+
+<!-- 9 · David Copperfield quote -->
+<section class="slide vcenter magic" id="quote-copperfield">
+  <div class="m-aura" aria-hidden="true"></div>
+  <h2 class="magic-hero quotehero">&ldquo;The real secret of magic lies in the performance.&rdquo;</h2>
+  <p class="quote-attr reveal">— <b>David Copperfield</b></p>
 </section>
 
 <script>
