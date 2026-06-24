@@ -363,11 +363,14 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .wf-conn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:clamp(.28rem,.7vh,.55rem) 0;font-weight:700;font-size:clamp(.95rem,1.3vw,1.15rem)}
 .wf-conn svg{width:clamp(17px,1.7vw,22px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
 .wf-result{margin-top:clamp(.6rem,1.4vh,1rem);font-weight:800;font-size:clamp(1rem,1.4vw,1.22rem)}
-.wf-note{position:relative;z-index:1;margin-top:clamp(1.2rem,2.8vh,1.9rem);max-width:64ch;margin-left:auto;margin-right:auto}
-.wf-note p{font-size:clamp(1.06rem,1.45vw,1.3rem);color:var(--text-secondary);line-height:1.4}
-.wf-note p b{color:var(--text-primary);font-weight:800}
-.wf-note .caveat{margin-top:.65rem;font-size:clamp(1rem,1.32vw,1.16rem)}
-.wf-note .caveat b{color:var(--accent)}
+/* page 26: flattery exception (insecure boss) */
+#flattery-exception{text-align:center;align-items:center;overflow:hidden}
+#flattery-exception .eyebrow{width:100%;justify-content:center;text-align:center}
+.fe-hero{position:relative;z-index:1;font-weight:800;letter-spacing:-.02em;line-height:1.1;font-size:clamp(2.1rem,4.4vw,3.5rem);max-width:22ch;margin:0 auto}
+.fe-hero .accentword{color:var(--accent);font-style:italic}
+.fe-note{position:relative;z-index:1;margin-top:clamp(.55rem,1.3vh,.95rem);font-size:clamp(1.1rem,1.6vw,1.4rem);color:var(--text-secondary);font-weight:600}
+.fe-body{position:relative;z-index:1;margin-top:clamp(1.6rem,3.6vh,2.6rem);font-size:clamp(1.3rem,2vw,1.7rem);color:var(--text-secondary);max-width:46ch;margin-left:auto;margin-right:auto;line-height:1.4}
+.fe-body b{color:var(--text-primary);font-weight:800}
 </style>
 </head>
 <body>
@@ -750,7 +753,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 <!-- 25 · Why flattery fails: two mirrored flow charts -->
 <section class="slide vcenter" id="why-flattery">
-  <span class="eyebrow reveal">Why flattery fails</span>
+  <span class="eyebrow reveal">Why flattery fails sometimes</span>
   <h2 class="wf-title reveal">What really happens when you compliment your boss</h2>
   <div class="wf-charts reveal">
     <div class="wf-chart good">
@@ -776,10 +779,15 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
       <div class="wf-result">→ reads as obsequiousness</div>
     </div>
   </div>
-  <div class="wf-note reveal">
-    <p><b>Complimenting up signals obsequiousness</b> most of the time — or reads as insincere, or "you want something." It rarely triggers your boss's emotion, and it's gone in minutes.</p>
-    <p class="caveat">It <b>can</b> work if your boss is extremely insecure (not uncommon) — but that good feeling gets overwritten in minutes the moment you make them look bad in front of their leadership.</p>
-  </div>
+</section>
+
+<!-- 26 · The exception: flattery + insecurity -->
+<section class="slide vcenter" id="flattery-exception">
+  <div class="ask-aura" aria-hidden="true"></div>
+  <span class="eyebrow reveal">The exception</span>
+  <h2 class="fe-hero reveal">Complimenting up <span class="accentword">can</span> work — if your boss is <span class="accentword">insecure</span>.</h2>
+  <p class="fe-note reveal">(not uncommon)</p>
+  <p class="fe-body reveal">But the good feeling gets <b>overwritten in minutes</b> the moment you make them look bad in front of their leadership — for the same reason it worked: <b>they're insecure</b>.</p>
 </section>
 
 <script>
