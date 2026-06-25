@@ -342,12 +342,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 #good-label .formula .f-word,#good-label .formula .f-op{font-size:clamp(1.4rem,2.9vw,2.4rem)}
 .gl-swoosh{position:relative;z-index:1;margin-top:clamp(.3rem,1vh,.7rem);display:flex;justify-content:center;transform:translateX(clamp(80px,8vw,150px))}
 .gl-swoosh svg{width:clamp(250px,28vw,380px);height:auto;overflow:visible}
-.gl-swoosh .sw-path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1s cubic-bezier(.6,.04,.4,1) .5s}
+.gl-swoosh .sw-path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .8s cubic-bezier(.6,.04,.4,1) .3s}
 #good-label.visible .gl-swoosh .sw-path{stroke-dashoffset:0}
-.gl-swoosh .sw-head{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0;transition:opacity .3s ease 1.35s}
-#good-label.visible .gl-swoosh .sw-head{opacity:1}
-#good-label .gl-chips-lead{margin-top:clamp(.6rem,1.6vh,1rem)}
-@media (prefers-reduced-motion:reduce){.gl-swoosh .sw-path{stroke-dashoffset:0}.gl-swoosh .sw-head{opacity:1}}
+.gl-swoosh .sw-head{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .3s ease-out 1.05s}
+#good-label.visible .gl-swoosh .sw-head{stroke-dashoffset:0}
+#good-label .gl-chips-lead{margin-top:clamp(.6rem,1.6vh,1rem);transition-delay:1.4s}
+#good-label.visible .gl-chips.stagger>*:nth-child(1){transition-delay:1.5s}
+#good-label.visible .gl-chips.stagger>*:nth-child(2){transition-delay:1.6s}
+#good-label.visible .gl-chips.stagger>*:nth-child(3){transition-delay:1.7s}
+#good-label.visible .gl-chips.stagger>*:nth-child(4){transition-delay:1.8s}
+#good-label.visible .gl-chips.stagger>*:nth-child(5){transition-delay:1.9s}
+@media (prefers-reduced-motion:reduce){.gl-swoosh .sw-path,.gl-swoosh .sw-head{stroke-dashoffset:0;transition:none}#good-label .gl-chips-lead,#good-label.visible .gl-chips.stagger>*{transition-delay:0s}}
 
 /* page 25: why flattery fails (two mirrored flow charts) */
 #why-flattery{text-align:center;align-items:center;overflow:hidden}
@@ -760,7 +765,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <div class="gl-swoosh" aria-hidden="true">
     <svg viewBox="0 0 320 112">
       <path class="sw-path" pathLength="100" d="M304 14 C 320 58, 226 82, 138 88 C 96 91, 58 96, 46 106"/>
-      <path class="sw-head" d="M36 96 L46 108 L56 96"/>
+      <path class="sw-head" pathLength="100" d="M61 103 L46 106 L52 92"/>
     </svg>
   </div>
   <div class="gl-chips-lead reveal">Labels worth earning</div>
