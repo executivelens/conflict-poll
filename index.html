@@ -524,6 +524,32 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .q2-down{display:flex;justify-content:center;color:var(--accent)}
 .q2-down svg{width:clamp(18px,1.9vw,24px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .q2-qmark{font-size:clamp(2.2rem,3.6vw,3.2rem);font-weight:900;color:var(--accent);line-height:1;text-align:center}
+
+/* page 38: 3 layers of narrative POV (from Canva p7) */
+#narr-layers{align-items:center;text-align:center;overflow:hidden}
+#narr-layers .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.2rem,1.6vw,1.45rem);letter-spacing:.1em}
+.nl-title{position:relative;z-index:1;font-size:clamp(1.9rem,3.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;margin:0 auto}
+.nl-title .accentword{color:var(--accent);font-style:italic}
+.nl-stack{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:clamp(.7rem,1.6vh,1.1rem);width:100%;max-width:1120px;margin:clamp(1.4rem,3.2vh,2.4rem) auto 0}
+.nl-band{border-radius:16px;border:1px solid var(--border);padding:clamp(1rem,1.8vw,1.4rem) clamp(1.3rem,2.2vw,1.9rem);text-align:left;box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.nl-band.l1{width:100%;background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 28%,transparent)}
+.nl-band.l2{width:86%;background:#fff}
+.nl-band.l3{width:72%;background:var(--surface)}
+.nl-name{font-weight:800;font-size:clamp(1.18rem,1.6vw,1.5rem);color:var(--text-primary);line-height:1.15}
+.nl-name b{color:var(--accent)}
+.nl-eg{margin-top:.3rem;font-size:clamp(1.02rem,1.4vw,1.25rem);color:var(--text-secondary);line-height:1.35}
+
+/* page 39: narrative strategy — 4 rules (from Canva p7) */
+#narr-strategy{align-items:center;text-align:center;overflow:hidden}
+#narr-strategy .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.2rem,1.6vw,1.45rem);letter-spacing:.1em}
+.ns-title{position:relative;z-index:1;font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:28ch;margin:0 auto}
+.ns-title .accentword{color:var(--accent);font-style:italic}
+.ns-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(.6rem,1.4vh,1rem);width:100%;max-width:1120px;margin:clamp(1.3rem,3vh,2.2rem) auto 0;text-align:left}
+.ns-item{display:flex;align-items:flex-start;gap:clamp(.9rem,1.7vw,1.4rem);background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(.9rem,1.6vw,1.3rem) clamp(1.1rem,1.9vw,1.5rem);box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.ns-num{flex:0 0 auto;width:2em;height:2em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:clamp(1.05rem,1.45vw,1.3rem)}
+.ns-item p{font-size:clamp(1.06rem,1.45vw,1.3rem);font-weight:500;line-height:1.38;color:var(--text-primary);align-self:center}
+.ns-item p b{color:var(--accent);font-weight:800}
+.ns-item p .muted{color:var(--text-secondary);font-weight:600}
 </style>
 </head>
 <body>
@@ -1144,6 +1170,29 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     </div>
     <div class="q2-spacer"></div>
     <div class="q2-spacer"></div>
+  </div>
+</section>
+
+<!-- 38 · 3 layers of narrative POV (from Canva p7) -->
+<section class="slide vcenter" id="narr-layers">
+  <span class="eyebrow reveal">3 layers of narrative POV</span>
+  <h2 class="nl-title reveal">How to create a narrative that has <span class="accentword">impact and influence</span></h2>
+  <div class="nl-stack stagger">
+    <div class="nl-band l1"><div class="nl-name"><b>Company-interest</b>-centric narrative</div><div class="nl-eg">e.g. Talks around how to drive business forward about customer, cost, revenue, turnaround time, risk.</div></div>
+    <div class="nl-band l2"><div class="nl-name"><b>Reporting-chain interest</b>-centric narrative</div><div class="nl-eg">e.g. We need to push back this product feature because we don't have bandwidth to support.</div></div>
+    <div class="nl-band l3"><div class="nl-name"><b>Self-interest</b>-centric narrative</div><div class="nl-eg">e.g. I can't do this product feature because my plate is full.</div></div>
+  </div>
+</section>
+
+<!-- 39 · Narrative strategy — 4 rules (from Canva p7) -->
+<section class="slide vcenter" id="narr-strategy">
+  <span class="eyebrow reveal">Strategy</span>
+  <h2 class="ns-title reveal">Narrative of creating <span class="accentword">positive emotions</span> from your leadership</h2>
+  <div class="ns-list stagger">
+    <div class="ns-item"><span class="ns-num">1</span><p>Know your self-interest, but <b>never use self-interest centric narrative in public meetings.</b> (EVER!)</p></div>
+    <div class="ns-item"><span class="ns-num">2</span><p>Always word things using <b>company-interest centric narrative</b>.</p></div>
+    <div class="ns-item"><span class="ns-num">3</span><p>When company-interest and reporting chain interest have conflict — always <b>prioritize reporting chain interest</b> BUT wrapped with a company interest coat.</p></div>
+    <div class="ns-item"><span class="ns-num">4</span><p>Lastly, know when to voice your self-interest (promotion, pay bump, more scope) to your leadership in 1×1 meetings <b>AFTER you've done #3 consistently</b>, aka you have a set of established and good labels. <span class="muted">See pre-recorded CAARD framework of how to word it tactically.</span></p></div>
   </div>
 </section>
 
