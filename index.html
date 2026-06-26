@@ -520,6 +520,10 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .q2-card.strat{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
 .q2-tag{font-size:clamp(1rem,1.35vw,1.2rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:.5rem}
 .q2-q b{color:var(--accent);font-weight:800}
+.q2-stack{display:flex;flex-direction:column;gap:clamp(.5rem,1.2vh,.85rem)}
+.q2-down{display:flex;justify-content:center;color:var(--accent)}
+.q2-down svg{width:clamp(18px,1.9vw,24px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.q2-qmark{font-size:clamp(2.2rem,3.6vw,3.2rem);font-weight:900;color:var(--accent);line-height:1;text-align:center}
 </style>
 </head>
 <body>
@@ -1127,9 +1131,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
     <div class="q2-term f-accent">Positive Emotions</div>
     <div class="q2-op">=</div>
     <div class="q2-term"><span class="shimmer-text">A Good, Sticky Label</span></div>
-    <div class="q2-card"><p class="q2-q"><span class="q2-w">Where</span> your boss's emotions are triggered</p></div>
+    <div class="q2-stack">
+      <div class="q2-card"><p class="q2-q"><span class="q2-w">Where</span> your boss's emotions are triggered</p></div>
+      <div class="q2-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+      <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-q">Show your boss's leadership that you and your boss have <b>everything under control</b> whenever your boss's leadership is present.</p></div>
+    </div>
     <div class="q2-spacer"></div>
-    <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-q">Show your boss's leadership that you and your boss have <b>everything under control</b> whenever your boss's leadership is present.</p></div>
+    <div class="q2-stack">
+      <div class="q2-card"><p class="q2-q"><span class="q2-w">How</span> to create that positive emotion that creates the deepest memory</p></div>
+      <div class="q2-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+      <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-qmark">?</p></div>
+    </div>
     <div class="q2-spacer"></div>
     <div class="q2-spacer"></div>
   </div>
