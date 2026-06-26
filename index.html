@@ -466,18 +466,17 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 /* page 34: not made up — exec stories (from Canva p4) */
 #exec-stories{align-items:center;text-align:center;overflow:hidden}
-.es-hook{position:relative;z-index:1;font-size:clamp(1.4rem,2.2vw,1.85rem);color:var(--text-secondary);font-style:italic;max-width:42ch;margin:0 auto;line-height:1.35}
-.es-answer{position:relative;z-index:1;margin-top:clamp(.5rem,1.4vh,1rem);font-size:clamp(2rem,3.8vw,3rem);font-weight:900;letter-spacing:-.02em}
-.es-answer .no{color:var(--accent)}
-.es-label{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2.1rem);font-size:clamp(1.2rem,1.6vw,1.45rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800}
-.es-cards{position:relative;z-index:1;display:flex;gap:clamp(1rem,2vw,1.6rem);justify-content:center;align-items:stretch;flex-wrap:wrap;width:100%;max-width:1240px;margin:clamp(1rem,2.4vh,1.6rem) auto 0}
-.es-card{flex:1 1 0;min-width:260px;max-width:380px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(1.3rem,2.1vw,1.8rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;text-align:left}
+.es-title{position:relative;z-index:1;font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:30ch;margin:0 auto}
+.es-title .accentword{color:var(--accent);font-style:italic}
+.es-cards{position:relative;z-index:1;display:flex;gap:clamp(1rem,2vw,1.6rem);justify-content:center;align-items:stretch;flex-wrap:wrap;width:100%;max-width:1280px;margin:clamp(1.3rem,3vh,2.2rem) auto 0}
+.es-card{flex:1 1 0;min-width:260px;max-width:400px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(1.3rem,2.1vw,1.8rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;text-align:left}
 .es-card.key{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
-.es-num{width:2em;height:2em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:clamp(1.1rem,1.5vw,1.35rem)}
-.es-card p{font-size:clamp(1.22rem,1.65vw,1.5rem);font-weight:600;line-height:1.35;color:var(--text-primary)}
+.es-num{width:2em;height:2em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:clamp(1.05rem,1.45vw,1.3rem);flex:0 0 auto}
+.es-card p{font-size:clamp(1.18rem,1.6vw,1.45rem);font-weight:600;line-height:1.35;color:var(--text-primary)}
 .es-card p b{color:var(--accent);font-weight:800}
-.es-foot{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2.1rem);font-size:clamp(1.22rem,1.75vw,1.55rem);color:var(--text-secondary);max-width:66ch;margin-left:auto;margin-right:auto;line-height:1.4}
-.es-foot b{color:var(--text-primary);font-weight:800}
+.es-band{position:relative;z-index:1;margin:clamp(1.3rem,3vh,2.2rem) auto 0;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:16px;padding:clamp(1rem,1.8vw,1.5rem) clamp(1.4rem,2.4vw,2rem);max-width:1000px;font-size:clamp(1.18rem,1.65vw,1.5rem);color:var(--text-primary);font-weight:600;line-height:1.4}
+.es-band b{color:var(--accent);font-weight:800}
+.es-band .muted{color:var(--text-secondary);font-weight:600}
 
 /* page 35: the cascade (from Canva p5) */
 #cascade{align-items:center;text-align:center;overflow:hidden}
@@ -1024,15 +1023,13 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 <!-- 34 · You don't make it up — exec stories (from Canva p4) -->
 <section class="slide vcenter" id="exec-stories">
-  <p class="es-hook reveal">"So I just make up a bright future for investors and become a billionaire?"</p>
-  <h2 class="es-answer reveal"><span class="no">No</span> — it's illegal.</h2>
-  <div class="es-label reveal">What you need your COO · CTO · CFO · CXO to tell you</div>
+  <h2 class="es-title reveal">What do you need your <span class="accentword">COO · CTO · CFO · CXO</span> to tell you?</h2>
   <div class="es-cards stagger">
-    <div class="es-card"><span class="es-num">1</span><p>Did we hit the goal we promised this quarter?</p></div>
-    <div class="es-card"><span class="es-num">2</span><p>If not — why? And why we're confident about next quarter.</p></div>
-    <div class="es-card key"><span class="es-num">3</span><p>Stories <b>with data</b> that we're getting more profitable — things are under control.</p></div>
+    <div class="es-card"><span class="es-num">1</span><p>What happened this quarter — did we hit the goal we promised?</p></div>
+    <div class="es-card"><span class="es-num">2</span><p>If not — why? And why are we confident we'll hit it this quarter?</p></div>
+    <div class="es-card key"><span class="es-num">3</span><p>More importantly — stories <b>with data</b> that make the company more profitable (or less unprofitable). Aka: things are under control — so you can sell them as your <b>vision &amp; strategy</b> to investors.</p></div>
   </div>
-  <p class="es-foot reveal">You package those into your <b>vision &amp; strategy</b> for investors — no regulator on what you promise, you just have to fulfill it over time. That's <b>setting the right expectation</b>.</p>
+  <p class="es-band reveal"><span class="muted">Btw — no agency regulates the vision &amp; strategy you tell investors.</span> You just have to fulfill it… with time. That's <b>setting the right expectation</b>.</p>
 </section>
 
 <!-- 35 · The cascade (from Canva p5) -->
