@@ -498,6 +498,22 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .casc-arrow svg{width:clamp(14px,1.5vw,19px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .casc-foot{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2rem);font-size:clamp(1.22rem,1.75vw,1.55rem);color:var(--text-secondary);max-width:52ch;margin-left:auto;margin-right:auto;line-height:1.4}
 .casc-foot b{color:var(--accent);font-weight:800}
+
+/* page 36: boss's emotion & hormone life-cycle (from Canva p6) */
+#emo-cycle{align-items:center;text-align:center;overflow:hidden}
+#emo-cycle .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.08em}
+.ec-setup{position:relative;z-index:1;margin:clamp(.8rem,2vh,1.4rem) auto 0;max-width:1120px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:clamp(.85rem,1.5vw,1.25rem) clamp(1.2rem,2.2vw,1.8rem);font-size:clamp(1.02rem,1.32vw,1.2rem);color:var(--text-secondary);line-height:1.4;text-align:left}
+.ec-setup b{color:var(--text-primary);font-weight:800}
+.ec-flow{position:relative;z-index:1;margin:clamp(.7rem,1.6vh,1.1rem) auto 0;max-width:1120px;display:flex;flex-direction:column;align-items:center}
+.ec-row{display:flex;align-items:stretch;gap:clamp(.9rem,1.6vw,1.4rem);width:100%;background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(.8rem,1.4vw,1.15rem) clamp(1.1rem,1.9vw,1.5rem);box-shadow:0 8px 22px rgba(0,0,0,.05);text-align:left}
+.ec-row.win{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 28%,transparent)}
+.ec-tag{flex:0 0 clamp(118px,14vw,184px);display:flex;flex-direction:column;justify-content:center;gap:.12rem;border-right:1px solid var(--border);padding-right:clamp(.8rem,1.5vw,1.3rem)}
+.ec-emotion{font-weight:900;letter-spacing:-.01em;font-size:clamp(1.12rem,1.55vw,1.42rem);color:var(--text-primary);line-height:1.05}
+.ec-horm{font-size:clamp(.82rem,1.1vw,1rem);font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--accent)}
+.ec-text{flex:1 1 0;font-size:clamp(1rem,1.3vw,1.18rem);line-height:1.36;color:var(--text-primary);font-weight:500;align-self:center}
+.ec-text b{color:var(--accent);font-weight:800}
+.ec-down{padding:clamp(.16rem,.45vh,.32rem) 0;color:var(--accent);display:flex;justify-content:center}
+.ec-down svg{width:clamp(16px,1.7vw,22px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 </style>
 </head>
 <body>
@@ -1069,7 +1085,34 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <p class="casc-foot reveal">Each level sells the one above a <b>"we've got it under control"</b> story — to sell upward, all the way to the investors.</p>
 </section>
 
-<!-- 36 · The strategy -->
+<!-- 36 · Boss's emotion & hormone life-cycle (from Canva p6) -->
+<section class="slide vcenter" id="emo-cycle">
+  <span class="eyebrow reveal">Your boss's emotion &amp; hormone life-cycle</span>
+  <p class="ec-setup reveal">Your boss has their goals. They want pay bump, promotion, more scope, blah blah blah. Their leadership team decides these. And we now know that your boss needs to give their leadership the <b>perception that his/her team is under control</b> and is going to have everything under control. But your boss needs data, story, narratives to tell their leadership this. <b>That's where you come in.</b> You will be delivering these messages.</p>
+  <div class="ec-flow stagger">
+    <div class="ec-row">
+      <div class="ec-tag"><span class="ec-emotion">Nervous</span><span class="ec-horm">Adrenaline · Cortisol</span></div>
+      <div class="ec-text">Assuming you don't have any label on you now, your boss' default emotion is <b>nervous</b>. Adrenaline and Cortisol are released. Their heart races because of the uncertainty of how their leadership perceives you — a reflection of if your boss has everything under control.</div>
+    </div>
+    <div class="ec-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+    <div class="ec-row">
+      <div class="ec-tag"><span class="ec-emotion">The moment</span><span class="ec-horm">Deepest emotion</span></div>
+      <div class="ec-text">If you pay close attention, when you present/talk in meetings, your boss' attention is actually on <b>their boss' reaction to you</b> vs what you are presenting. This is precisely where the deepest emotions are formed.</div>
+    </div>
+    <div class="ec-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+    <div class="ec-row win">
+      <div class="ec-tag"><span class="ec-emotion">Reward</span><span class="ec-horm">Dopamine</span></div>
+      <div class="ec-text">If you handled well and their boss is happy, a dose of <b>dopamine</b> is released in your boss' brain. You will get a <b>good label</b> and vice versa… If you present when your skip level's leadership is present, your skip level's attention is on their boss. And same rule applies.</div>
+    </div>
+    <div class="ec-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+    <div class="ec-row win">
+      <div class="ec-tag"><span class="ec-emotion">Repeat</span><span class="ec-horm">→ Brand</span></div>
+      <div class="ec-text">If you repeat this, your positive label will become stickier and stickier. A super duper sticky label is called <b>brand</b>. That's how you form your <b>personal brand</b>.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 37 · The strategy -->
 <section class="slide vcenter" id="strategy">
   <span class="eyebrow reveal">The strategy</span>
   <p class="st-intro reveal">Based on this, the strategy becomes clear:</p>
