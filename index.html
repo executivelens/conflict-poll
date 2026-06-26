@@ -585,6 +585,59 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .omt-next{position:relative;z-index:1;margin:clamp(1.3rem,2.8vh,2rem) auto 0;max-width:880px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 28%,transparent);border-radius:18px;padding:clamp(1.2rem,2vw,1.7rem) clamp(1.4rem,2.4vw,2rem)}
 .omt-next .lbl{font-size:clamp(1rem,1.35vw,1.2rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:.5rem}
 .omt-next p{font-size:clamp(1.18rem,1.6vw,1.45rem);font-weight:700;color:var(--text-primary);line-height:1.4}
+
+/* page 13: course structure — two tracks (Canva p11) */
+#course-structure{align-items:center;text-align:center;overflow:hidden}
+#course-structure .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.08em}
+.cs-panels{position:relative;z-index:1;display:flex;gap:clamp(1.1rem,2.2vw,1.9rem);justify-content:center;align-items:stretch;flex-wrap:wrap;width:100%;max-width:1300px;margin:clamp(1.2rem,2.8vh,2rem) auto 0}
+.cs-panel{flex:1 1 0;min-width:330px;max-width:600px;border:1px solid var(--border);border-radius:18px;padding:clamp(1.1rem,1.8vw,1.5rem);background:#fff;box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;gap:clamp(.55rem,1.1vh,.85rem)}
+.cs-head{font-size:clamp(1rem,1.32vw,1.18rem);font-weight:800;color:var(--accent);line-height:1.3}
+.cs-days{display:flex;gap:clamp(.55rem,1.1vw,.9rem)}
+.cs-day{flex:1 1 0;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:clamp(.65rem,1.2vw,.95rem);text-align:left}
+.cs-day .d{font-weight:800;color:var(--accent);font-size:clamp(.92rem,1.2vw,1.08rem);margin-bottom:.25rem}
+.cs-day p{font-size:clamp(.95rem,1.25vw,1.12rem);color:var(--text-primary);font-weight:600;line-height:1.3}
+.cs-day p .sub{display:block;color:var(--text-secondary);font-weight:500;margin-top:.25rem}
+.cs-merge{display:flex;justify-content:center;color:var(--accent)}
+.cs-merge svg{width:clamp(17px,1.8vw,23px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.cs-funnel{display:flex;flex-direction:column;gap:.32rem;align-items:center}
+.cs-tier{width:100%;text-align:center;border-radius:10px;padding:clamp(.42rem,.9vw,.68rem);font-weight:700;font-size:clamp(.98rem,1.32vw,1.18rem);background:var(--surface);border:1px solid var(--border);color:var(--text-primary)}
+.cs-tier.top{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* page 14: methodology statements (Canva p12) */
+#methodology{align-items:center;text-align:center;overflow:hidden}
+#methodology .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.08em}
+.cm-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(1rem,2.2vh,1.6rem);max-width:920px;margin:clamp(1.6rem,3.6vh,2.6rem) auto 0}
+.cm-row{display:flex;align-items:center;gap:clamp(1rem,1.8vw,1.5rem);background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(1.1rem,1.9vw,1.6rem) clamp(1.3rem,2.2vw,1.9rem);box-shadow:0 10px 26px rgba(0,0,0,.05);text-align:left}
+.cm-ic{flex:0 0 auto;width:clamp(46px,4.2vw,60px);height:clamp(46px,4.2vw,60px);border-radius:14px;background:var(--accent-dim);display:grid;place-items:center}
+.cm-ic svg{width:54%;height:54%;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cm-row p{font-size:clamp(1.2rem,1.65vw,1.5rem);font-weight:600;line-height:1.35;color:var(--text-primary)}
+.cm-row p b{color:var(--accent);font-weight:800}
+.cm-q{position:relative;z-index:1;margin-top:clamp(1.4rem,3vh,2.2rem);font-size:clamp(1.6rem,2.8vw,2.3rem);font-weight:800;color:var(--text-primary)}
+.cm-q .accentword{color:var(--accent);font-style:italic}
+
+/* page 15: derivation tree (Canva p13) */
+#derive-tree{align-items:center;text-align:center;overflow:hidden}
+#derive-tree .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.08em}
+.tr-wrap{position:relative;z-index:1;width:100%;max-width:940px;margin:clamp(1.2rem,2.8vh,2rem) auto 0;display:flex;flex-direction:column;align-items:flex-start;gap:clamp(.35rem,.9vh,.6rem)}
+.tr-row{display:flex;gap:clamp(.55rem,1.1vw,.95rem)}
+.tr-node{border-radius:12px;border:1px solid var(--border);background:#fff;padding:clamp(.5rem,1vw,.8rem) clamp(.9rem,1.6vw,1.4rem);font-weight:700;font-size:clamp(1rem,1.35vw,1.2rem);box-shadow:0 8px 20px rgba(0,0,0,.05);white-space:nowrap}
+.tr-node.root{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tr-node.hl{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 35%,transparent);color:var(--accent)}
+.tr-conn{display:flex;align-items:center;gap:.5rem;color:var(--accent);font-weight:700;font-size:clamp(.9rem,1.2vw,1.08rem);padding-left:clamp(.5rem,1.1vw,.9rem)}
+.tr-conn svg{width:clamp(15px,1.5vw,19px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.tr-foot{position:relative;z-index:1;margin-top:clamp(1.2rem,2.8vh,2rem);font-size:clamp(1.2rem,1.7vw,1.55rem);color:var(--text-secondary);font-weight:600;max-width:56ch;margin-left:auto;margin-right:auto;line-height:1.4}
+.tr-foot b{color:var(--accent);font-weight:800}
+
+/* page 16: why it's built this way (Canva p14) */
+#why-structure{align-items:center;text-align:center;overflow:hidden}
+#why-structure .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.08em}
+.ws-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(.7rem,1.6vh,1.1rem);max-width:1060px;margin:clamp(1.2rem,2.8vh,2rem) auto 0;text-align:left}
+.ws-item{display:flex;align-items:stretch;gap:clamp(.9rem,1.7vw,1.4rem);background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(.9rem,1.6vw,1.3rem) clamp(1.1rem,1.9vw,1.5rem);box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.ws-tag{flex:0 0 clamp(150px,16vw,210px);font-weight:800;color:var(--accent);font-size:clamp(1.05rem,1.4vw,1.28rem);border-right:1px solid var(--border);padding-right:clamp(.8rem,1.5vw,1.2rem);display:flex;align-items:center;line-height:1.15}
+.ws-item p{font-size:clamp(1.02rem,1.38vw,1.25rem);font-weight:500;line-height:1.38;color:var(--text-primary);align-self:center}
+.ws-item p b{color:var(--accent);font-weight:800}
+.ws-foot{position:relative;z-index:1;margin-top:clamp(1.1rem,2.6vh,1.8rem);font-size:clamp(1.25rem,1.9vw,1.65rem);font-weight:700;color:var(--text-primary);max-width:52ch;margin-left:auto;margin-right:auto;line-height:1.3}
+.ws-foot .accentword{color:var(--accent);font-style:italic}
 </style>
 </head>
 <body>
@@ -742,7 +795,78 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   </div>
 </section>
 
-<!-- 13 · The hidden meeting (performance review strategy) -->
+<!-- 13 · Course structure & methodology — two tracks (Canva p11) -->
+<section class="slide vcenter" id="course-structure">
+  <span class="eyebrow reveal">Course structure &amp; methodology</span>
+  <div class="cs-panels stagger">
+    <div class="cs-panel">
+      <div class="cs-head">Science-based · tested on numerous people for 100k+ hours of meetings</div>
+      <div class="cs-days">
+        <div class="cs-day"><div class="d">Day 1</div><p>Managing up · Managing vertically<span class="sub">Core &amp; high-stake relationships</span></p></div>
+        <div class="cs-day"><div class="d">Day 2</div><p>Handling frictions · Managing horizontally<span class="sub">Auxiliary &amp; low-to-medium-stake relationships</span></p></div>
+      </div>
+      <div class="cs-merge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+      <div class="cs-funnel">
+        <div class="cs-tier top">Human physical constraints</div>
+        <div class="cs-tier">Mental Models</div>
+        <div class="cs-tier">Strategies</div>
+        <div class="cs-tier">Tactics</div>
+      </div>
+    </div>
+    <div class="cs-panel">
+      <div class="cs-head">Anthropology-based · nuanced · experience &amp; proprietary knowledge</div>
+      <div class="cs-days">
+        <div class="cs-day"><div class="d">Day 3</div><p>Workplace in cross-cultural contexts</p></div>
+        <div class="cs-day"><div class="d">Day 4</div><p>Make the right judgements about role, team, company &amp; career</p></div>
+      </div>
+      <div class="cs-merge" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+      <div class="cs-funnel">
+        <div class="cs-tier top">Anthropology findings</div>
+        <div class="cs-tier">Way of research &amp; thinking</div>
+        <div class="cs-tier">Strategies</div>
+        <div class="cs-tier">Tactics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · Methodology statements (Canva p12) -->
+<section class="slide vcenter" id="methodology">
+  <span class="eyebrow reveal">Course structure &amp; methodology</span>
+  <div class="cm-list stagger">
+    <div class="cm-row"><span class="cm-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.5 9 L16 12 L10.5 15 Z" fill="var(--accent)" stroke="none"/></svg></span><p><b>Live sessions</b> focus on Constraints, Mental Models and Strategies — with a couple of tactics as examples.</p></div>
+    <div class="cm-row"><span class="cm-ic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="4" rx="1"/><rect x="4" y="11" width="16" height="4" rx="1"/><rect x="6" y="17" width="12" height="2.6" rx="1"/></svg></span><p><b>Pre-recorded content</b> is your library of tactics.</p></div>
+  </div>
+  <p class="cm-q reveal">Why structured <span class="accentword">this way</span>?</p>
+</section>
+
+<!-- 15 · Derivation tree (Canva p13) -->
+<section class="slide vcenter" id="derive-tree">
+  <span class="eyebrow reveal">Why structured this way?</span>
+  <div class="tr-wrap reveal">
+    <div class="tr-row"><span class="tr-node root">Human physical constraint 1</span></div>
+    <div class="tr-conn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V18 M6 12 L12 19 L18 12"/></svg></div>
+    <div class="tr-row"><span class="tr-node hl">Mental Model 1</span><span class="tr-node">Mental Model 2</span><span class="tr-node">Mental Model 3</span></div>
+    <div class="tr-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V18 M6 12 L12 19 L18 12"/></svg>from Mental Model 1</div>
+    <div class="tr-row"><span class="tr-node hl">Strategy 1</span><span class="tr-node">Strategy 2</span><span class="tr-node">Strategy 3</span></div>
+    <div class="tr-conn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 V18 M6 12 L12 19 L18 12"/></svg>from Strategy 1</div>
+    <div class="tr-row"><span class="tr-node">Tactic 1</span><span class="tr-node">Tactic 2</span><span class="tr-node">Tactic 3</span></div>
+  </div>
+  <p class="tr-foot reveal">One constraint spins off <b>many strategies</b> — and each strategy spins off <b>even more tactics</b>.</p>
+</section>
+
+<!-- 16 · Why it's built this way (Canva p14) -->
+<section class="slide vcenter" id="why-structure">
+  <span class="eyebrow reveal">Why it's built this way</span>
+  <div class="ws-list stagger">
+    <div class="ws-item"><div class="ws-tag">Constraints &amp; Mental Models</div><p>The <b>source of everything</b> — universally applicable in almost all human activities.</p></div>
+    <div class="ws-item"><div class="ws-tag">Strategies</div><p>I only picked strategies suited for the promotion / execution-presence use case. But you can develop your own (entrepreneurship, non-profit) once you understand <b>why things work the way they do</b>.</p></div>
+    <div class="ws-item"><div class="ws-tag">Tactics</div><p>By-products of strategies — the <b>easiest to learn</b>. But without understanding the why, you'll always get confused about when, where and on whom to use them.</p></div>
+  </div>
+  <p class="ws-foot reveal">Human constraints are the <span class="accentword">hardest to learn</span> — so I'll make you feel them. Like the magic we just did together.</p>
+</section>
+
+<!-- 17 · The hidden meeting (performance review strategy) -->
 <section class="slide vcenter hidden-meeting" id="hidden-meeting">
   <h2 class="hm-title reveal">The most important meeting of your career is your <span class="accentword">performance review</span> — and you'll <span class="strong">never be in it</span>.</h2>
   <p class="hm-sub reveal">It's where they discuss your performance and decide your future. Without you in the room.</p>
