@@ -426,6 +426,24 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 /* page 31: grow your business (transition) */
 #grow{text-align:center;align-items:center;overflow:hidden}
 .grow-hero{position:relative;z-index:1;font-weight:900;letter-spacing:-.03em;line-height:1.05;font-size:clamp(3rem,8vw,6.5rem);max-width:16ch;margin:0 auto}
+
+/* page 32: how a business grows (from Canva p2) */
+#biz-growth{overflow:hidden;align-items:center}
+#biz-growth .eyebrow{width:100%;justify-content:center;text-align:center}
+.bg-flow{position:relative;z-index:1;display:flex;align-items:stretch;justify-content:center;gap:clamp(.5rem,1.1vw,.9rem);flex-wrap:wrap;width:100%;max-width:1240px;margin:clamp(1.4rem,3.2vh,2.4rem) auto 0}
+.bg-stage{flex:1 1 0;min-width:198px;max-width:280px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:clamp(1.1rem,1.8vw,1.5rem) clamp(.9rem,1.4vw,1.2rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem}
+.bg-people{min-height:clamp(46px,5vw,64px);display:flex;align-items:flex-end;justify-content:center;gap:3px;flex-wrap:wrap;margin-bottom:.3rem}
+.bg-people svg{width:clamp(15px,1.6vw,20px);height:auto;fill:var(--accent);flex:0 0 auto}
+.bg-people.one svg{width:clamp(30px,3.2vw,42px)}
+.bg-people.crowd svg{width:clamp(10px,1.1vw,13px)}
+.bg-stage h3{font-size:clamp(1.12rem,1.55vw,1.4rem);font-weight:800;letter-spacing:-.01em;line-height:1.12}
+.bg-parties{font-size:clamp(.96rem,1.28vw,1.14rem);font-weight:700;color:var(--accent);line-height:1.25}
+.bg-market{font-size:clamp(.92rem,1.22vw,1.1rem);color:var(--text-secondary);line-height:1.3}
+.bg-arrow{flex:0 0 auto;align-self:center;color:var(--accent);display:flex;align-items:center}
+.bg-arrow svg{width:clamp(18px,1.9vw,26px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.bg-foot{position:relative;z-index:1;margin-top:clamp(1.4rem,3.2vh,2.2rem);text-align:center;font-size:clamp(1.1rem,1.55vw,1.36rem);color:var(--text-secondary);max-width:62ch;margin-left:auto;margin-right:auto;line-height:1.4}
+.bg-foot b{color:var(--text-primary);font-weight:800}
+@media (max-width:900px){.bg-arrow{transform:rotate(90deg)}}
 </style>
 </head>
 <body>
@@ -894,7 +912,42 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <h2 class="grow-hero reveal from-blur">Now let's <span class="shimmer-text">grow your business!</span></h2>
 </section>
 
-<!-- 32 · The strategy -->
+<!-- 32 · How a business grows (from Canva p2) -->
+<section class="slide vcenter" id="biz-growth">
+  <span class="eyebrow reveal">How a business grows its value</span>
+  <div class="bg-flow stagger">
+    <div class="bg-stage">
+      <div class="bg-people one"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg></div>
+      <h3>One-person business</h3>
+      <div class="bg-parties">You ↔ a buyer</div>
+      <div class="bg-market">via negotiation<br>(individual broker)</div>
+    </div>
+    <div class="bg-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h14M12 6l6 6-6 6"/></svg></div>
+    <div class="bg-stage">
+      <div class="bg-people"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg></div>
+      <h3>Small / family business</h3>
+      <div class="bg-parties">Family ↔ individual investors</div>
+      <div class="bg-market">private brokerage<br>(small-business brokers)</div>
+    </div>
+    <div class="bg-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h14M12 6l6 6-6 6"/></svg></div>
+    <div class="bg-stage">
+      <div class="bg-people"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg></div>
+      <h3>Startup / private company</h3>
+      <div class="bg-parties">Shareholders ↔ institutions</div>
+      <div class="bg-market">private brokerage<br>(VC / private equity)</div>
+    </div>
+    <div class="bg-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h14M12 6l6 6-6 6"/></svg></div>
+    <div class="bg-stage">
+      <div class="bg-people crowd"><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="4"/><path d="M3.5 21c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg></div>
+      <h3>Public company</h3>
+      <div class="bg-parties">Stockholders ↔ stockholders</div>
+      <div class="bg-market">public market<br>(NYSE · Nasdaq)</div>
+    </div>
+  </div>
+  <p class="bg-foot reveal"><b>Price is set by market value at every stage</b> — only the marketplace grows: from a handshake to the public exchange.</p>
+</section>
+
+<!-- 33 · The strategy -->
 <section class="slide vcenter" id="strategy">
   <span class="eyebrow reveal">The strategy</span>
   <p class="st-intro reveal">Based on this, the strategy becomes clear:</p>
