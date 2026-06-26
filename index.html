@@ -482,7 +482,16 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 /* page 35: the cascade (from Canva p5) */
 #cascade{align-items:center;text-align:center;overflow:hidden}
 #cascade .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.1em}
-.casc{position:relative;z-index:1;margin:clamp(1.1rem,2.6vh,1.8rem) auto 0;display:flex;flex-direction:column;align-items:center;width:100%}
+.casc-layout{position:relative;z-index:1;display:flex;gap:clamp(1.6rem,4vw,3.5rem);align-items:center;justify-content:center;flex-wrap:wrap;width:100%;max-width:1280px;margin:clamp(1.1rem,2.6vh,1.8rem) auto 0}
+.casc{display:flex;flex-direction:column;align-items:center;flex:0 0 auto}
+.casc-right{flex:1 1 0;min-width:300px;max-width:680px;display:flex;flex-direction:column;gap:clamp(.8rem,1.8vh,1.3rem);text-align:left}
+.cr-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:clamp(1rem,1.7vw,1.4rem) clamp(1.2rem,2vw,1.6rem);box-shadow:0 10px 26px rgba(0,0,0,.05)}
+.cr-card:last-child{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 28%,transparent)}
+.cr-who{font-size:clamp(1rem,1.35vw,1.2rem);letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:.4rem}
+.cr-card p{font-size:clamp(1.12rem,1.5vw,1.36rem);line-height:1.4;color:var(--text-primary);font-weight:600}
+.cr-card p .q{color:var(--text-secondary);font-weight:600}
+.cr-card p .a{color:var(--text-primary);font-weight:700}
+.cr-card p b{color:var(--accent);font-weight:800}
 .casc-pill{background:#fff;border:1px solid var(--border);border-radius:999px;padding:clamp(.4rem,.8vw,.6rem) clamp(1.4rem,2.4vw,2rem);box-shadow:0 8px 22px rgba(0,0,0,.05);font-weight:700;font-size:clamp(1.1rem,1.5vw,1.34rem);line-height:1.1;white-space:nowrap}
 .casc-pill.top{color:var(--text-secondary);background:var(--surface);box-shadow:none}
 .casc-pill.hl{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 12px 26px rgba(0,113,227,.26)}
@@ -1029,22 +1038,38 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 35 · The cascade (from Canva p5) -->
 <section class="slide vcenter" id="cascade">
   <span class="eyebrow reveal">It cascades — all the way down</span>
-  <div class="casc reveal">
-    <span class="casc-pill top">Investors</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill hl">CEO</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill">CTO · CFO · CXO</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill">VPs · SVPs · EVPs</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill">Directors</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill">Sr. Managers</span>
-    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
-    <span class="casc-pill hl">… you?</span>
+  <div class="casc-layout">
+    <div class="casc reveal">
+      <span class="casc-pill top">Investors</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill hl">CEO</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill">CTO · CFO · CXO</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill">VPs · SVPs · EVPs</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill">Directors</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill">Sr. Managers</span>
+      <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+      <span class="casc-pill hl">… you?</span>
+    </div>
+    <div class="casc-right stagger">
+      <div class="cr-card">
+        <div class="cr-who">CEO ⟶ C-suite</div>
+        <p><span class="q">"Did we hit the goal? If not — why, and why next quarter?"</span> <span class="a">"Here's the data and the story — we're getting more profitable. Under control."</span></p>
+      </div>
+      <div class="cr-card">
+        <div class="cr-who">C-suite ⟶ VPs · SVPs · EVPs</div>
+        <p><span class="q">"Is your org on track?"</span> <span class="a">"Here's the data and the story — my unit's under control."</span></p>
+      </div>
+      <div class="cr-card">
+        <div class="cr-who">… and all the way down</div>
+        <p>VPs ⟶ Directors ⟶ Sr. Managers ⟶ <b>you</b> — the same question, the same answer at every rung.</p>
+      </div>
+    </div>
   </div>
-  <p class="casc-foot reveal">Every rung feeds the one above a <b>"we've got it under control"</b> story — all the way up to the investors.</p>
+  <p class="casc-foot reveal">Each level sells the one above a <b>"we've got it under control"</b> story — to sell upward, all the way to the investors.</p>
 </section>
 
 <!-- 36 · The strategy -->
