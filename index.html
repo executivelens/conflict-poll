@@ -445,6 +445,24 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .bg-foot{position:relative;z-index:1;margin-top:clamp(1.4rem,3.2vh,2.2rem);text-align:center;font-size:clamp(1.1rem,1.55vw,1.36rem);color:var(--text-secondary);max-width:62ch;margin-left:auto;margin-right:auto;line-height:1.4}
 .bg-foot b{color:var(--text-primary);font-weight:800}
 @media (max-width:900px){.bg-arrow{transform:rotate(90deg)}}
+
+/* page 33: you are the CEO (from Canva p3) */
+#ceo{align-items:center;text-align:center;overflow:hidden}
+.ceo-badge{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:.35rem}
+.ceo-badge .ceo-person{width:clamp(46px,4.6vw,62px);height:auto;fill:var(--accent)}
+.ceo-tag{background:var(--accent);color:#fff;font-weight:900;letter-spacing:.12em;font-size:clamp(.85rem,1.2vw,1.05rem);padding:.2em .75em;border-radius:7px}
+.ceo-head{position:relative;z-index:1;margin-top:clamp(.9rem,2vh,1.4rem);font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.12;max-width:26ch;margin-left:auto;margin-right:auto}
+.ceo-head .accentword{color:var(--accent);font-style:italic}
+.ceo-cols{position:relative;z-index:1;display:flex;gap:clamp(1rem,2.2vw,1.8rem);justify-content:center;align-items:stretch;flex-wrap:wrap;width:100%;max-width:1080px;margin:clamp(1.4rem,3.2vh,2.4rem) auto 0}
+.ceo-card{flex:1 1 0;min-width:300px;max-width:500px;border:1px solid var(--border);border-radius:18px;padding:clamp(1.3rem,2.2vw,1.9rem) clamp(1.4rem,2.4vw,2rem);box-shadow:0 12px 30px rgba(0,0,0,.06);text-align:left;background:#fff}
+.ceo-card.move{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.ceo-card .clabel{font-size:clamp(1rem,1.35vw,1.2rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:.55rem}
+.ceo-card p{font-size:clamp(1.12rem,1.55vw,1.36rem);line-height:1.4;color:var(--text-primary);font-weight:600}
+.ceo-card p b{color:var(--accent);font-weight:800}
+.ceo-card p .dn{color:var(--text-secondary);font-weight:800;white-space:nowrap}
+.ceo-card p .up{color:var(--accent);font-weight:800;white-space:nowrap}
+.ceo-foot{position:relative;z-index:1;margin-top:clamp(1.4rem,3.2vh,2.2rem);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;color:var(--text-secondary);max-width:42ch;margin-left:auto;margin-right:auto;line-height:1.35}
+.ceo-foot b{color:var(--accent);font-style:italic;font-weight:800}
 </style>
 </head>
 <body>
@@ -948,7 +966,27 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <p class="bg-foot reveal"><b>Price is set by market value at every stage</b> — only the marketplace grows: from a handshake to the public exchange.</p>
 </section>
 
-<!-- 33 · The strategy -->
+<!-- 33 · You are the CEO (from Canva p3) -->
+<section class="slide vcenter" id="ceo">
+  <div class="ceo-badge">
+    <svg class="ceo-person" viewBox="0 0 48 40" aria-hidden="true"><circle cx="24" cy="12" r="8"/><path d="M5 40c0-10.5 8.5-17 19-17s19 6.5 19 17z"/></svg>
+    <span class="ceo-tag">CEO</span>
+  </div>
+  <h2 class="ceo-head reveal">Congrats — you're the <span class="accentword">CEO</span> of a public company now.</h2>
+  <div class="ceo-cols stagger">
+    <div class="ceo-card">
+      <div class="clabel">The challenge</div>
+      <p>Make current &amp; future investors believe your company is worth their investment — so they <span class="dn">don't sell ↓</span> and <span class="up">more buy in ↑</span>.</p>
+    </div>
+    <div class="ceo-card move">
+      <div class="clabel">What you do</div>
+      <p>Give them the perception of a <b>bright future</b> — that you'll keep generating profit for years to come.</p>
+    </div>
+  </div>
+  <p class="ceo-foot reveal">Aka — you, the CEO, have <b>everything under control.</b></p>
+</section>
+
+<!-- 34 · The strategy -->
 <section class="slide vcenter" id="strategy">
   <span class="eyebrow reveal">The strategy</span>
   <p class="st-intro reveal">Based on this, the strategy becomes clear:</p>
