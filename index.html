@@ -463,6 +463,33 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .ceo-card p .up{color:var(--accent);font-weight:800;white-space:nowrap}
 .ceo-foot{position:relative;z-index:1;margin-top:clamp(1.75rem,4vh,2.75rem);font-size:clamp(1.63rem,2.5vw,2.13rem);font-weight:700;color:var(--text-secondary);max-width:42ch;margin-left:auto;margin-right:auto;line-height:1.35}
 .ceo-foot b{color:var(--accent);font-style:italic;font-weight:800}
+
+/* page 34: not made up — exec stories (from Canva p4) */
+#exec-stories{align-items:center;text-align:center;overflow:hidden}
+.es-hook{position:relative;z-index:1;font-size:clamp(1.4rem,2.2vw,1.85rem);color:var(--text-secondary);font-style:italic;max-width:42ch;margin:0 auto;line-height:1.35}
+.es-answer{position:relative;z-index:1;margin-top:clamp(.5rem,1.4vh,1rem);font-size:clamp(2rem,3.8vw,3rem);font-weight:900;letter-spacing:-.02em}
+.es-answer .no{color:var(--accent)}
+.es-label{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2.1rem);font-size:clamp(1.2rem,1.6vw,1.45rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800}
+.es-cards{position:relative;z-index:1;display:flex;gap:clamp(1rem,2vw,1.6rem);justify-content:center;align-items:stretch;flex-wrap:wrap;width:100%;max-width:1240px;margin:clamp(1rem,2.4vh,1.6rem) auto 0}
+.es-card{flex:1 1 0;min-width:260px;max-width:380px;background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(1.3rem,2.1vw,1.8rem);box-shadow:0 12px 30px rgba(0,0,0,.06);display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;text-align:left}
+.es-card.key{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.es-num{width:2em;height:2em;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:clamp(1.1rem,1.5vw,1.35rem)}
+.es-card p{font-size:clamp(1.22rem,1.65vw,1.5rem);font-weight:600;line-height:1.35;color:var(--text-primary)}
+.es-card p b{color:var(--accent);font-weight:800}
+.es-foot{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2.1rem);font-size:clamp(1.22rem,1.75vw,1.55rem);color:var(--text-secondary);max-width:66ch;margin-left:auto;margin-right:auto;line-height:1.4}
+.es-foot b{color:var(--text-primary);font-weight:800}
+
+/* page 35: the cascade (from Canva p5) */
+#cascade{align-items:center;text-align:center;overflow:hidden}
+#cascade .eyebrow{width:100%;justify-content:center;text-align:center;font-size:clamp(1.35rem,1.9vw,1.7rem);letter-spacing:.1em}
+.casc{position:relative;z-index:1;margin:clamp(1.1rem,2.6vh,1.8rem) auto 0;display:flex;flex-direction:column;align-items:center;width:100%}
+.casc-pill{background:#fff;border:1px solid var(--border);border-radius:999px;padding:clamp(.4rem,.8vw,.6rem) clamp(1.4rem,2.4vw,2rem);box-shadow:0 8px 22px rgba(0,0,0,.05);font-weight:700;font-size:clamp(1.1rem,1.5vw,1.34rem);line-height:1.1;white-space:nowrap}
+.casc-pill.top{color:var(--text-secondary);background:var(--surface);box-shadow:none}
+.casc-pill.hl{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 12px 26px rgba(0,113,227,.26)}
+.casc-arrow{padding:clamp(.12rem,.4vh,.28rem) 0;color:var(--accent);display:flex;justify-content:center}
+.casc-arrow svg{width:clamp(14px,1.5vw,19px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.casc-foot{position:relative;z-index:1;margin-top:clamp(1.3rem,3vh,2rem);font-size:clamp(1.22rem,1.75vw,1.55rem);color:var(--text-secondary);max-width:52ch;margin-left:auto;margin-right:auto;line-height:1.4}
+.casc-foot b{color:var(--accent);font-weight:800}
 </style>
 </head>
 <body>
@@ -986,7 +1013,41 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   <p class="ceo-foot reveal">Aka — you, the CEO, have <b>everything under control.</b></p>
 </section>
 
-<!-- 34 · The strategy -->
+<!-- 34 · You don't make it up — exec stories (from Canva p4) -->
+<section class="slide vcenter" id="exec-stories">
+  <p class="es-hook reveal">"So I just make up a bright future for investors and become a billionaire?"</p>
+  <h2 class="es-answer reveal"><span class="no">No</span> — it's illegal.</h2>
+  <div class="es-label reveal">What you need your COO · CTO · CFO · CXO to tell you</div>
+  <div class="es-cards stagger">
+    <div class="es-card"><span class="es-num">1</span><p>Did we hit the goal we promised this quarter?</p></div>
+    <div class="es-card"><span class="es-num">2</span><p>If not — why? And why we're confident about next quarter.</p></div>
+    <div class="es-card key"><span class="es-num">3</span><p>Stories <b>with data</b> that we're getting more profitable — things are under control.</p></div>
+  </div>
+  <p class="es-foot reveal">You package those into your <b>vision &amp; strategy</b> for investors — no regulator on what you promise, you just have to fulfill it over time. That's <b>setting the right expectation</b>.</p>
+</section>
+
+<!-- 35 · The cascade (from Canva p5) -->
+<section class="slide vcenter" id="cascade">
+  <span class="eyebrow reveal">It cascades — all the way down</span>
+  <div class="casc reveal">
+    <span class="casc-pill top">Investors</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill hl">CEO</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill">CTO · CFO · CXO</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill">VPs · SVPs · EVPs</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill">Directors</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill">Sr. Managers</span>
+    <span class="casc-arrow"><svg viewBox="0 0 24 24"><path d="M12 20 V5 M6 11 L12 4 L18 11"/></svg></span>
+    <span class="casc-pill hl">… you?</span>
+  </div>
+  <p class="casc-foot reveal">Every rung feeds the one above a <b>"we've got it under control"</b> story — all the way up to the investors.</p>
+</section>
+
+<!-- 36 · The strategy -->
 <section class="slide vcenter" id="strategy">
   <span class="eyebrow reveal">The strategy</span>
   <p class="st-intro reveal">Based on this, the strategy becomes clear:</p>
