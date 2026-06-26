@@ -514,6 +514,12 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .ec-text b{color:var(--accent);font-weight:800}
 .ec-down{padding:clamp(.16rem,.45vh,.32rem) 0;color:var(--accent);display:flex;justify-content:center}
 .ec-down svg{width:clamp(16px,1.7vw,22px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* page 37: the strategy (formula layout, reuses page 27 q2-*) */
+#strategy .eyebrow{width:100%;justify-content:center;text-align:center}
+.q2-card.strat{background:var(--accent-dim);border-color:color-mix(in srgb,var(--accent) 30%,transparent)}
+.q2-tag{font-size:clamp(1rem,1.35vw,1.2rem);letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:800;margin-bottom:.5rem}
+.q2-q b{color:var(--accent);font-weight:800}
 </style>
 </head>
 <body>
@@ -1115,8 +1121,18 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 37 · The strategy -->
 <section class="slide vcenter" id="strategy">
   <span class="eyebrow reveal">The strategy</span>
-  <p class="st-intro reveal">Based on this, the strategy becomes clear:</p>
-  <h2 class="st-hero reveal">You want your boss to look like their team has <span class="accentword">everything under control</span> — because you have <span class="accentword">everything under control</span> wherever and whenever <span class="accentword">their leadership</span> is present.</h2>
+  <div class="q2-formula reveal">
+    <div class="q2-term f-accent">Spaced Repetition</div>
+    <div class="q2-op">×</div>
+    <div class="q2-term f-accent">Positive Emotions</div>
+    <div class="q2-op">=</div>
+    <div class="q2-term"><span class="shimmer-text">A Good, Sticky Label</span></div>
+    <div class="q2-card"><p class="q2-q"><span class="q2-w">Where</span> your boss's emotions are triggered</p></div>
+    <div class="q2-spacer"></div>
+    <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-q">Show your boss's leadership that you and your boss have <b>everything under control</b> whenever your boss's leadership is present.</p></div>
+    <div class="q2-spacer"></div>
+    <div class="q2-spacer"></div>
+  </div>
 </section>
 
 <script>
