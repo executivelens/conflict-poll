@@ -648,6 +648,21 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .ab-q{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:clamp(.85rem,1.5vw,1.2rem) clamp(1.1rem,1.9vw,1.5rem);box-shadow:0 8px 22px rgba(0,0,0,.05)}
 .ab-q p{font-size:clamp(1.05rem,1.45vw,1.3rem);color:var(--text-primary);font-weight:500;line-height:1.42}
 .ab-q p b{color:var(--accent);font-weight:700}
+
+/* page 18: answers to these (abstraction with level tags) */
+#answers{align-items:center;text-align:center;overflow:hidden}
+.an-title{position:relative;z-index:1;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin:0 auto}
+.an-title .accentword{color:var(--accent);font-style:italic}
+.an-list{position:relative;z-index:1;display:flex;flex-direction:column;gap:clamp(.6rem,1.3vh,.95rem);width:100%;max-width:1140px;margin:clamp(1rem,2.4vh,1.7rem) auto 0;text-align:left}
+.an-item{background:#fff;border:1px solid var(--border);border-radius:14px;padding:clamp(.8rem,1.4vw,1.2rem) clamp(1.1rem,1.9vw,1.6rem);box-shadow:0 8px 22px rgba(0,0,0,.05)}
+.an-term{font-weight:800;color:var(--accent);font-size:clamp(1.15rem,1.6vw,1.42rem);margin-bottom:.28rem;letter-spacing:-.01em}
+.an-def{font-size:clamp(1rem,1.32vw,1.18rem);color:var(--text-primary);font-weight:500;line-height:1.4}
+.an-def b{color:var(--accent);font-weight:800}
+.an-def .scn{font-weight:800;color:var(--text-primary)}
+.an-def .lvl{color:var(--accent);font-weight:700;font-size:.86em}
+.an-note{position:relative;z-index:1;margin:clamp(1rem,2.4vh,1.7rem) auto 0;max-width:1000px;font-size:clamp(1.05rem,1.42vw,1.28rem);color:var(--text-secondary);line-height:1.42}
+.an-note b{color:var(--text-primary);font-weight:800}
+.an-note p+p{margin-top:.5rem}
 </style>
 </head>
 <body>
@@ -888,7 +903,21 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
   </div>
 </section>
 
-<!-- 18 · The hidden meeting (performance review strategy) -->
+<!-- 18 · Answers to these (abstraction) -->
+<section class="slide vcenter" id="answers">
+  <h2 class="an-title reveal"><span class="accentword">Answers</span> to these</h2>
+  <div class="an-list stagger">
+    <div class="an-item"><div class="an-term">Manage up</div><div class="an-def"><b>"Manage perception"</b> <span class="lvl">(Strategy level)</span> in <span class="scn">"Upwards"</span> Scenarios using <b>Principles</b> <span class="lvl">(Mental model level)</span> derived from <b>Human Constraints</b> <span class="lvl">(Constraint level)</span> - through your behavior/talk <span class="lvl">(Tactic Level)</span></div></div>
+    <div class="an-item"><div class="an-term">Manage down</div><div class="an-def"><b>"Manage perception"</b> <span class="lvl">(Strategy level)</span> in <span class="scn">"Downwards"</span> Scenarios using <b>Principles</b> <span class="lvl">(Mental model level)</span> derived from <b>Human Constraints</b> <span class="lvl">(Constraint level)</span> - through your behavior/talk <span class="lvl">(Tactic Level)</span></div></div>
+    <div class="an-item"><div class="an-term">Influence without Authority = Manage laterally</div><div class="an-def"><b>"Manage perception"</b> <span class="lvl">(Strategy level)</span> in <span class="scn">"Horizontal"</span> Scenarios using <b>Principles</b> <span class="lvl">(Mental model level)</span> derived from <b>Human Constraints</b> <span class="lvl">(Constraint level)</span> - through your behavior/talk <span class="lvl">(Tactic Level)</span></div></div>
+  </div>
+  <div class="an-note reveal">
+    <p><b>Mental Model &amp; Constraint remain unchanged.</b> The only change is on strategy level in different contexts and the tactics stemed from the strategies.</p>
+    <p>You can develop and test your own strategies and tactics once you learn how human constraint work in our daily life and principles around them..</p>
+  </div>
+</section>
+
+<!-- 19 · The hidden meeting (performance review strategy) -->
 <section class="slide vcenter hidden-meeting" id="hidden-meeting">
   <h2 class="hm-title reveal">The most important meeting of your career is your <span class="accentword">performance review</span> — and you'll <span class="strong">never be in it</span>.</h2>
   <p class="hm-sub reveal">It's where they discuss your performance and decide your future. Without you in the room.</p>
