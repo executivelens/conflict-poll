@@ -663,6 +663,16 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 .an-note{position:relative;z-index:1;margin:clamp(1rem,2.4vh,1.7rem) auto 0;max-width:1000px;font-size:clamp(1.05rem,1.42vw,1.28rem);color:var(--text-secondary);line-height:1.42}
 .an-note b{color:var(--text-primary);font-weight:800}
 .an-note p+p{margin-top:.5rem}
+
+/* enlarged section titles (pages 28/33/34/43) */
+#label-formula .eyebrow,#two-questions .eyebrow,#rule-thumb .eyebrow,#strategy .eyebrow{font-size:clamp(1.3rem,1.85vw,1.65rem);letter-spacing:.06em}
+/* page 43 strategy: full-width strategy card under both questions */
+#strategy .strat-arrow{position:relative;z-index:1;display:flex;justify-content:center;color:var(--accent);margin-top:clamp(.6rem,1.4vh,1rem)}
+#strategy .strat-arrow svg{width:clamp(20px,2vw,26px);height:auto;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#strategy .strat-full{position:relative;z-index:1;margin:clamp(.6rem,1.4vh,1rem) auto 0;max-width:1000px;background:var(--accent-dim);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:18px;padding:clamp(1.1rem,1.9vw,1.6rem) clamp(1.4rem,2.4vw,2rem);text-align:center}
+#strategy .strat-full .q2-tag{margin-bottom:.4rem}
+#strategy .strat-full p{font-size:clamp(1.25rem,1.75vw,1.6rem);font-weight:700;color:var(--text-primary);line-height:1.35}
+#strategy .strat-full p b{color:var(--accent);font-weight:800}
 </style>
 </head>
 <body>
@@ -1067,7 +1077,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 <!-- 22 · The label formula + memory-depth ladder -->
 <section class="slide vcenter" id="label-formula">
-  <span class="eyebrow reveal">The label formula</span>
+  <span class="eyebrow reveal">The Label Formula — Mental Model</span>
   <div class="formula reveal">
     <span class="f-term"><span class="f-word">Label</span></span>
     <span class="f-op">=</span>
@@ -1181,7 +1191,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 <!-- 27 · The two questions (reordered formula) -->
 <section class="slide vcenter" id="two-questions">
-  <span class="eyebrow reveal">The two questions to answer</span>
+  <span class="eyebrow reveal">The Label Formula — Mental Model, continued</span>
   <div class="q2-formula reveal">
     <div class="q2-term f-accent">Spaced Repetition</div>
     <div class="q2-op">×</div>
@@ -1199,7 +1209,7 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 <!-- 28 · Rule of thumb -->
 <section class="slide vcenter" id="rule-thumb">
   <div class="ask-aura" aria-hidden="true"></div>
-  <span class="eyebrow reveal">Rule of thumb</span>
+  <span class="eyebrow reveal">What Corporate actually expect from you — Mental Model</span>
   <h2 class="ask-q reveal from-blur">Corporate is about creating the <span class="accentword">perception</span> that you have everything <span class="accentword">under control</span>.</h2>
 </section>
 
@@ -1360,27 +1370,21 @@ h2{font-weight:700;letter-spacing:-.025em;font-size:clamp(2.8rem,6.4vw,4.6rem);l
 
 <!-- 37 · The strategy -->
 <section class="slide vcenter" id="strategy">
-  <span class="eyebrow reveal">The strategy</span>
+  <span class="eyebrow reveal">The Label Formula — Mental Model, continued</span>
   <div class="q2-formula reveal">
     <div class="q2-term f-accent">Spaced Repetition</div>
     <div class="q2-op">×</div>
     <div class="q2-term f-accent">Positive Emotions</div>
     <div class="q2-op">=</div>
     <div class="q2-term"><span class="shimmer-text">A Good, Sticky Label</span></div>
-    <div class="q2-stack">
-      <div class="q2-card"><p class="q2-q"><span class="q2-w">Where</span> your boss's emotions are triggered</p></div>
-      <div class="q2-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
-      <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-q">Show your boss's leadership that you and your boss have <b>everything under control</b> whenever your boss's leadership is present.</p></div>
-    </div>
+    <div class="q2-card"><p class="q2-q"><span class="q2-w">Where</span> your boss's emotions are triggered</p></div>
     <div class="q2-spacer"></div>
-    <div class="q2-stack">
-      <div class="q2-card"><p class="q2-q"><span class="q2-w">How</span> to create that positive emotion that creates the deepest memory</p></div>
-      <div class="q2-down" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
-      <div class="q2-card strat"><div class="q2-tag">Strategy</div><p class="q2-qmark">?</p></div>
-    </div>
+    <div class="q2-card"><p class="q2-q"><span class="q2-w">How</span> to create that positive emotion that creates the deepest memory</p></div>
     <div class="q2-spacer"></div>
     <div class="q2-spacer"></div>
   </div>
+  <div class="strat-arrow reveal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4 V20 M6 14 L12 21 L18 14"/></svg></div>
+  <div class="strat-full reveal"><div class="q2-tag">Strategy</div><p>Show your boss's leadership that you and your boss have <b>everything under control</b> whenever your boss's leadership is present.</p></div>
 </section>
 
 <!-- 38 · 3 layers of narrative POV (from Canva p7) -->
